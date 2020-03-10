@@ -1,6 +1,6 @@
 import os
 
-os.chdir('Documents/GitHub/COVIDanalysis')
+os.chdir(os.getenv("HOME") + '/Documents/GitHub/COVIDanalysis')
 
 import predict
 import mldistr2
