@@ -18,3 +18,4 @@ with open('daily_update.txt','w') as file:
 
 os.system('git add -A')
 os.system("git commit -m 'daily update'")
+os.system("git push")
