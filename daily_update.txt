@@ -23,4 +23,3 @@ Maximum Likelihood Estimation of Duration Periods:
 16 - 31 cases (   4|   3)   20.00%     60.00%     20.00%                                   
 32 - 63 cases (   2|   1)   33.33%     66.67%                                              
 64 -127 cases (   0|   2)              100.0%                                              
-(end of file)
