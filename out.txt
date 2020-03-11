@@ -434,4 +434,38 @@ Paraguay
 Albania 
 Cyprus 
 St. Martin 
-Brunei 
+Brunei [master 9c18857] daily update
+ 7 files changed, 463 insertions(+), 1 deletion(-)
+ rewrite __pycache__/data_analyze.cpython-37.pyc (61%)
+ create mode 100644 __pycache__/mldistr2.cpython-37.pyc
+ create mode 100644 __pycache__/predict.cpython-37.pyc
+ rewrite daily_update.txt (100%)
+ create mode 100644 out.txt
+ rewrite topten.png (98%)
+fatal: could not read Username for 'https://github.com': No such device or address
+
+7-Day COVID-19 Forecast: 3/9/20
+Top Ten Largest Anticipated Increases
+Italy***             9171 +  23965 ->   33136
+Iran                 7161 +   3657 ->   10818
+Spain***             1073 +   2810 ->    3883
+US****                605 +   2107 ->    2712
+South Korea          7478 +   1384 ->    8862
+France**             1208 +   1371 ->    2579
+Germany              1176 +   1073 ->    2249
+Netherlands**         321 +    554 ->     875
+UK**                  321 +    495 ->     816
+Switzerland**         374 +    455 ->     829
+
+US County-level COVID-19 Confirmed Case Profile: 3/9/20
+Maximum Likelihood Estimation of Duration Periods:
+(PAST = # counties having experienced/exceeded level; CURR = # counties presently at level)
+               PAST|CURR   <2 days    2-3 days   4-6 days   7-10 days 11-15 days  >15 days 
+   1    case  (  52|  49)   28.69%     27.79%      7.81%     10.20%                25.51%  
+ 2 - 3  cases (  28|  24)   27.14%     24.29%     21.59%                           26.99%  
+ 4 - 7  cases (  10|  15)   34.13%     21.96%                43.91%                        
+ 8 - 15 cases (   6|   4)   30.00%     70.00%                                              
+16 - 31 cases (   4|   3)   20.00%     60.00%     20.00%                                   
+32 - 63 cases (   2|   1)   33.33%     66.67%                                              
+64 -127 cases (   0|   2)              100.0%                                              
+
