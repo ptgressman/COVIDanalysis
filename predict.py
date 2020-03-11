@@ -6,8 +6,8 @@ import numpy as np
 
 
 import data_analyze
-big_outbreaks = 200
-data = data_analyze.data
+big_outbreaks = 100
+data = data_analyze.my_aggregate_smoothlog
 
 def instate(value):
     cumlsum = 0
@@ -18,52 +18,7 @@ def instate(value):
     return cumlsum
 
 
-transitions = []
-for item in data.keys():
-    if re.search('County',item):
-        currentstate = 0
-        total = 0
-        prevtotal = 0
-        for value in data[item]:
-            thisstate = instate(value)
-            if (thisstate != currentstate) :
-                if currentstate != 0 and currentstate <= 7:
-                    if currentstate == 1:
-                        prevtotal = 0
-                    transitions.append([currentstate,total,prevtotal])
-                currentstate = thisstate
-                prevtotal = total
-                total = 1
-            else:
-                total += 1
 
-print('US County Transition Times')
-
-for stateno in range(1,8):
-    durations = []
-    numer = 0
-    denom = 0
-    for item in transitions:
-        if item[0] == stateno:
-            numer += item[1]
-            denom += 1
-            durations.append(item[1])
-    if len(durations) > 0:
-        durations.sort()
-        average = numer/denom
-        median = durations[int(len(durations)/2)]
-        print(2**(stateno-1),'-',2**stateno-1,'cases',median,'(med)',int(average+0.5),'(avg)',denom,'(# counties)')
-
-
-
-for item in data.keys():
-    if item != 'date':
-        size = len(data[item])
-        for index in range(size):
-            if data[item][index] > 0:
-                data[item][index] = ln(data[item][index])
-            else:
-                data[item][index] = -999999
 
 
 def matchscore(list1,list2):
@@ -78,6 +33,18 @@ def find_analogue(thislist,datadict,neededspace=1):
     score = 999999.0
     future = None
     size = len(thislist)
+    for index in range(301):
+        shortlist = []
+        for subind in range(size+1):
+            shortlist.append(subind*index/100)
+        matchdat = matchscore(thislist,shortlist)
+        newfuture = shortlist[-1] + matchdat[1]
+        ratejump = newfuture - thislist[-1] - (thislist[-1] - thislist[0])/len(thislist)
+        if (matchdat[0] < score) and (newfuture >= thislist[-1]) and (ratejump < 0.0):
+            score = matchdat[0]
+            future = newfuture
+    linear_future = future
+    #return future
     history = len(datadict['date'])
     for index in range(size):
         if (thislist[index] < -100):
@@ -94,15 +61,21 @@ def find_analogue(thislist,datadict,neededspace=1):
                     if valid:
                         matchdat = matchscore(thislist,shortlist)
                         newfuture = shortlist[-1] + matchdat[1]
-                        if (matchdat[0] < score) and (newfuture >= thislist[-1]):
+                        ratejump = newfuture - thislist[-1] - (thislist[-1] - thislist[0])/len(thislist)
+                        if (matchdat[0] < score) and (newfuture >= thislist[-1]) and (ratejump < 1.0):
+                            score = matchdat[0]
+                            future = newfuture
+                        elif (matchdat[0] < score) and (newfuture >=thislist[-1]) and ((future is not None) and (newfuture <= future)):
                             score = matchdat[0]
                             future = newfuture
     if (score > 4.0):
         return None
+    if future is not None and linear_future is not None:
+        future = 0.10 * future + 0.90 * linear_future
     return future
 
 notable_labels = []
-for place in data_analyze.big_labels:
+for place in data_analyze.my_aggregate_data:
     if place != 'date':
         print(place + ' ',end='',flush=True)
         stopped = False

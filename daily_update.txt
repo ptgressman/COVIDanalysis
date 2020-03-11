@@ -1,16 +1,16 @@
 ================================================================================
 7-Day COVID-19 Forecast: 3/10/20
 Top Ten Largest Anticipated Increases
-France****           1784 +  17233 ->   19017
-Italy**             10149 +  10158 ->   20307
-Iran (Islamic Rep    8041 +   5227 ->   13268
-Spain***             1694 +   3999 ->    5693
-Denmark****           261 +   3119 ->    3380
-Norway****            399 +   2317 ->    2716
-US**                 1669 +   1932 ->    3601
-Sweden****            355 +   1393 ->    1748
-Germany              1456 +   1294 ->    2750
-UK***                 382 +   1105 ->    1487
+Italy               10149 +   9161 ->   19310
+Spain****            1694 +   7705 ->    9399
+Iran (Islamic Rep    8041 +   4654 ->   12695
+Denmark****           261 +   4074 ->    4335
+France**             1784 +   3192 ->    4976
+US****                959 +   2973 ->    3932
+Germany**            1456 +   1771 ->    3227
+Norway****            399 +   1449 ->    1848
+Sweden***             355 +    915 ->    1270
+Mainland China      80756 +    803 ->   81559
 --------------------------------------------------------------------------------
 US County-level COVID-19 Confirmed Case Profile: 3/10/20
 Maximum Likelihood Estimation of Duration Periods:
