@@ -1,4 +1,30 @@
 ================================================================================
+7-Day COVID-19 Forecast: 3/11/20
+Top Ten Largest Anticipated Increases
+Italy               12461 +  11289 ->   23750
+Spain****            2276 +   8774 ->   11050
+Denmark****           444 +   8578 ->    9022
+Iran                 9000 +   4290 ->   13290
+France**             2283 +   3957 ->    6240
+US***                1280 +   3737 ->    5017
+Norway****            597 +   2996 ->    3593
+Germany**            1907 +   2136 ->    4043
+Sweden***             499 +   1317 ->    1816
+Switzerland**         652 +    888 ->    1540
+--------------------------------------------------------------------------------
+US County-level COVID-19 Confirmed Case Profile: 3/11/20
+Maximum Likelihood Estimation of Duration Periods:
+(PAST = # counties having experienced/exceeded level; CURR = # counties presently at level)
+               PAST|CURR   <2 days    2-3 days   4-6 days   7-10 days 11-15 days  >15 days 
+   1    case  (  63|  32)   26.32%     27.89%     13.16%     12.23%                20.39%  
+ 2 - 3  cases (  39|  24)   26.41%     27.94%     21.14%      4.90%      4.90%     14.71%  
+ 4 - 7  cases (  18|  21)   28.65%     30.58%     10.19%     30.58%                        
+ 8 - 15 cases (  10|   8)   39.29%     34.69%     26.02%                                   
+16 - 31 cases (   6|   4)   10.00%     60.00%     30.00%                                   
+32 - 63 cases (   3|   3)   50.00%     25.00%     25.00%                                   
+64 -127 cases (   1|   2)                         100.0%                                   
+128-255 cases (   0|   1)   100.0%                                                         
+================================================================================
 7-Day COVID-19 Forecast: 3/10/20
 Top Ten Largest Anticipated Increases
 Italy               10149 +   9161 ->   19310
