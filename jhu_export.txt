@@ -1,0 +1,743 @@
+JHU 03-09-20 {68:Vermont:Bennington:1}
+JHU 03-09-20 {69:Vermont:Bennington:1}
+JHU 03-09-20 {69:Minnesota:Carver:1}
+JHU 03-09-20 {69:Florida:Charlotte:1}
+JHU 03-09-20 {69:Georgia:Cherokee:1}
+JHU 03-09-20 {69:Texas:Collin:1}
+JHU 03-09-20 {69:Kentucky:Jefferson:1}
+JHU 03-09-20 {69:Louisiana:Jefferson Parish:1}
+JHU 03-09-20 {69:California:Shasta:1}
+JHU 03-09-20 {69:South Carolina:Spartanburg:1}
+JHU 03-09-20 {69:Kentucky:Harrison:2}
+JHU 03-09-20 {69:Iowa:Johnson:3}
+JHU 03-09-20 {68:Massachusetts:Berkshire:1}
+JHU 03-09-20 {69:Massachusetts:Berkshire:1}
+JHU 03-09-20 {68:Tennessee:Davidson:1}
+JHU 03-09-20 {69:Tennessee:Davidson:1}
+JHU 03-09-20 {68:Oregon:Douglas:1}
+JHU 03-09-20 {69:Oregon:Douglas:1}
+JHU 03-09-20 {68:California:Fresno:1}
+JHU 03-09-20 {69:California:Fresno:1}
+JHU 03-09-20 {68:Maryland:Harford:1}
+JHU 03-09-20 {69:Maryland:Harford:1}
+JHU 03-09-20 {68:Indiana:Hendricks:1}
+JHU 03-09-20 {69:Indiana:Hendricks:2}
+JHU 03-09-20 {68:New Jersey:Hudson:1}
+JHU 03-09-20 {69:New Jersey:Hudson:1}
+JHU 03-09-20 {68:Kansas:Johnson:1}
+JHU 03-09-20 {69:Kansas:Johnson:1}
+JHU 03-09-20 {68:Washington:Kittitas:1}
+JHU 03-09-20 {69:Washington:Kittitas:1}
+JHU 03-09-20 {68:Florida:Manatee:1}
+JHU 03-09-20 {69:Florida:Manatee:2}
+JHU 03-09-20 {68:Oregon:Marion:1}
+JHU 03-09-20 {69:Oregon:Marion:1}
+JHU 03-09-20 {68:Florida:Okaloosa:1}
+JHU 03-09-20 {69:Florida:Okaloosa:1}
+JHU 03-09-20 {66:Georgia:Polk:1}
+JHU 03-09-20 {67:Georgia:Polk:1}
+JHU 03-09-20 {68:Georgia:Polk:1}
+JHU 03-09-20 {69:Georgia:Polk:1}
+JHU 03-09-20 {68:California:Riverside:1}
+JHU 03-09-20 {69:California:Riverside:1}
+JHU 03-09-20 {68:Tennessee:Shelby:1}
+JHU 03-09-20 {69:Tennessee:Shelby:1}
+JHU 03-09-20 {68:Missouri:St. Louis:1}
+JHU 03-09-20 {69:Missouri:St. Louis:1}
+JHU 03-09-20 {68:New York:Suffolk:1}
+JHU 03-09-20 {69:New York:Suffolk:1}
+JHU 03-09-20 {68:New York:Ulster:1}
+JHU 03-09-20 {69:New York:Ulster:1}
+JHU 03-09-20 {68:Florida:Volusia:1}
+JHU 03-09-20 {69:Florida:Volusia:1}
+JHU 03-09-20 {68:Virginia:Fairfax:2}
+JHU 03-09-20 {69:Virginia:Fairfax:2}
+JHU 03-09-20 {68:New Hampshire:Rockingham:1}
+JHU 03-09-20 {69:New Hampshire:Rockingham:1}
+JHU 03-09-20 {68:District of Columbia:Washington:2}
+JHU 03-09-20 {69:District of Columbia:Washington:2}
+JHU 03-09-20 {68:Pennsylvania:Montgomery:4}
+JHU 03-09-20 {69:Pennsylvania:Montgomery:5}
+JHU 03-09-20 {63:California:Alameda:1}
+JHU 03-09-20 {64:California:Alameda:1}
+JHU 03-09-20 {65:California:Alameda:1}
+JHU 03-09-20 {66:California:Alameda:1}
+JHU 03-09-20 {67:California:Alameda:2}
+JHU 03-09-20 {68:California:Alameda:2}
+JHU 03-09-20 {69:California:Alameda:2}
+JHU 03-09-20 {67:Florida:Broward:2}
+JHU 03-09-20 {68:Florida:Broward:2}
+JHU 03-09-20 {69:Florida:Broward:3}
+JHU 03-09-20 {67:Florida:Lee:2}
+JHU 03-09-20 {68:Florida:Lee:2}
+JHU 03-09-20 {69:Florida:Lee:2}
+JHU 03-09-20 {67:Arizona:Pinal:2}
+JHU 03-09-20 {68:Arizona:Pinal:2}
+JHU 03-09-20 {69:Arizona:Pinal:2}
+JHU 03-09-20 {67:New York:Rockland:2}
+JHU 03-09-20 {68:New York:Rockland:2}
+JHU 03-09-20 {69:New York:Rockland:4}
+JHU 03-09-20 {67:New York:Saratoga:2}
+JHU 03-09-20 {68:New York:Saratoga:2}
+JHU 03-09-20 {69:New York:Saratoga:2}
+JHU 03-09-20 {67:South Carolina:Charleston:1}
+JHU 03-09-20 {68:South Carolina:Charleston:1}
+JHU 03-09-20 {69:South Carolina:Charleston:1}
+JHU 03-09-20 {67:Washington:Clark:1}
+JHU 03-09-20 {68:Washington:Clark:1}
+JHU 03-09-20 {69:Washington:Clark:1}
+JHU 03-09-20 {67:Georgia:Cobb:1}
+JHU 03-09-20 {68:Georgia:Cobb:1}
+JHU 03-09-20 {69:Georgia:Cobb:3}
+JHU 03-09-20 {67:Utah:Davis:1}
+JHU 03-09-20 {68:Utah:Davis:1}
+JHU 03-09-20 {69:Utah:Davis:1}
+JHU 03-09-20 {67:Colorado:El Paso:1}
+JHU 03-09-20 {68:Colorado:El Paso:1}
+JHU 03-09-20 {69:Colorado:El Paso:1}
+JHU 03-09-20 {67:Hawaii:Honolulu:1}
+JHU 03-09-20 {68:Hawaii:Honolulu:1}
+JHU 03-09-20 {69:Hawaii:Honolulu:1}
+JHU 03-09-20 {67:Oregon:Jackson:1}
+JHU 03-09-20 {68:Oregon:Jackson:2}
+JHU 03-09-20 {69:Oregon:Jackson:2}
+JHU 03-09-20 {67:Washington:Jefferson:1}
+JHU 03-09-20 {68:Washington:Jefferson:1}
+JHU 03-09-20 {69:Washington:Jefferson:1}
+JHU 03-09-20 {67:South Carolina:Kershaw:1}
+JHU 03-09-20 {68:South Carolina:Kershaw:1}
+JHU 03-09-20 {69:South Carolina:Kershaw:1}
+JHU 03-09-20 {67:Oregon:Klamath:1}
+JHU 03-09-20 {68:Oregon:Klamath:1}
+JHU 03-09-20 {69:Oregon:Klamath:1}
+JHU 03-09-20 {67:California:Madera:1}
+JHU 03-09-20 {68:California:Madera:1}
+JHU 03-09-20 {69:California:Madera:1}
+JHU 03-09-20 {67:Washington:Pierce:1}
+JHU 03-09-20 {68:Washington:Pierce:4}
+JHU 03-09-20 {69:Washington:Pierce:4}
+JHU 03-09-20 {67:Oklahoma:Tulsa:1}
+JHU 03-09-20 {68:Oklahoma:Tulsa:1}
+JHU 03-09-20 {69:Oklahoma:Tulsa:1}
+JHU 03-09-20 {67:Colorado:Douglas:3}
+JHU 03-09-20 {68:Colorado:Douglas:3}
+JHU 03-09-20 {69:Colorado:Douglas:3}
+JHU 03-09-20 {61:Rhode Island:Providence:1}
+JHU 03-09-20 {62:Rhode Island:Providence:2}
+JHU 03-09-20 {63:Rhode Island:Providence:2}
+JHU 03-09-20 {64:Rhode Island:Providence:2}
+JHU 03-09-20 {65:Rhode Island:Providence:2}
+JHU 03-09-20 {66:Rhode Island:Providence:2}
+JHU 03-09-20 {67:Rhode Island:Providence:3}
+JHU 03-09-20 {68:Rhode Island:Providence:3}
+JHU 03-09-20 {69:Rhode Island:Providence:3}
+JHU 03-09-20 {66:North Carolina:Chatham:1}
+JHU 03-09-20 {67:North Carolina:Chatham:1}
+JHU 03-09-20 {68:North Carolina:Chatham:1}
+JHU 03-09-20 {69:North Carolina:Chatham:1}
+JHU 03-09-20 {66:Pennsylvania:Delaware:1}
+JHU 03-09-20 {67:Pennsylvania:Delaware:1}
+JHU 03-09-20 {68:Pennsylvania:Delaware:1}
+JHU 03-09-20 {69:Pennsylvania:Delaware:1}
+JHU 03-09-20 {66:Nebraska:Douglas:1}
+JHU 03-09-20 {67:Nebraska:Douglas:1}
+JHU 03-09-20 {68:Nebraska:Douglas:1}
+JHU 03-09-20 {69:Nebraska:Douglas:3}
+JHU 03-09-20 {66:Kentucky:Fayette:1}
+JHU 03-09-20 {67:Kentucky:Fayette:1}
+JHU 03-09-20 {68:Kentucky:Fayette:1}
+JHU 03-09-20 {69:Kentucky:Fayette:1}
+JHU 03-09-20 {66:Indiana:Marion:1}
+JHU 03-09-20 {67:Indiana:Marion:1}
+JHU 03-09-20 {68:Indiana:Marion:1}
+JHU 03-09-20 {69:Indiana:Marion:1}
+JHU 03-09-20 {66:Massachusetts:Middlesex:1}
+JHU 03-09-20 {67:Massachusetts:Middlesex:1}
+JHU 03-09-20 {68:Massachusetts:Middlesex:7}
+JHU 03-09-20 {69:Massachusetts:Middlesex:7}
+JHU 03-09-20 {65:New York:Nassau:1}
+JHU 03-09-20 {66:New York:Nassau:1}
+JHU 03-09-20 {67:New York:Nassau:4}
+JHU 03-09-20 {68:New York:Nassau:5}
+JHU 03-09-20 {69:New York:Nassau:17}
+JHU 03-09-20 {66:Minnesota:Ramsey:1}
+JHU 03-09-20 {67:Minnesota:Ramsey:1}
+JHU 03-09-20 {68:Minnesota:Ramsey:1}
+JHU 03-09-20 {69:Minnesota:Ramsey:1}
+JHU 03-09-20 {66:Nevada:Washoe:1}
+JHU 03-09-20 {67:Nevada:Washoe:1}
+JHU 03-09-20 {68:Nevada:Washoe:2}
+JHU 03-09-20 {69:Nevada:Washoe:2}
+JHU 03-09-20 {66:Pennsylvania:Wayne:1}
+JHU 03-09-20 {67:Pennsylvania:Wayne:1}
+JHU 03-09-20 {68:Pennsylvania:Wayne:1}
+JHU 03-09-20 {69:Pennsylvania:Wayne:1}
+JHU 03-09-20 {66:California:Yolo:1}
+JHU 03-09-20 {67:California:Yolo:1}
+JHU 03-09-20 {68:California:Yolo:1}
+JHU 03-09-20 {69:California:Yolo:1}
+JHU 03-09-20 {31:California:Santa Clara:1}
+JHU 03-09-20 {32:California:Santa Clara:1}
+JHU 03-09-20 {33:California:Santa Clara:1}
+JHU 03-09-20 {34:California:Santa Clara:2}
+JHU 03-09-20 {35:California:Santa Clara:2}
+JHU 03-09-20 {36:California:Santa Clara:2}
+JHU 03-09-20 {37:California:Santa Clara:2}
+JHU 03-09-20 {38:California:Santa Clara:2}
+JHU 03-09-20 {39:California:Santa Clara:2}
+JHU 03-09-20 {40:California:Santa Clara:2}
+JHU 03-09-20 {41:California:Santa Clara:2}
+JHU 03-09-20 {42:California:Santa Clara:2}
+JHU 03-09-20 {43:California:Santa Clara:2}
+JHU 03-09-20 {44:California:Santa Clara:2}
+JHU 03-09-20 {45:California:Santa Clara:2}
+JHU 03-09-20 {46:California:Santa Clara:2}
+JHU 03-09-20 {47:California:Santa Clara:2}
+JHU 03-09-20 {48:California:Santa Clara:2}
+JHU 03-09-20 {49:California:Santa Clara:2}
+JHU 03-09-20 {50:California:Santa Clara:2}
+JHU 03-09-20 {51:California:Santa Clara:2}
+JHU 03-09-20 {52:California:Santa Clara:2}
+JHU 03-09-20 {53:California:Santa Clara:2}
+JHU 03-09-20 {54:California:Santa Clara:2}
+JHU 03-09-20 {55:California:Santa Clara:2}
+JHU 03-09-20 {56:California:Santa Clara:2}
+JHU 03-09-20 {57:California:Santa Clara:2}
+JHU 03-09-20 {58:California:Santa Clara:2}
+JHU 03-09-20 {59:California:Santa Clara:2}
+JHU 03-09-20 {60:California:Santa Clara:3}
+JHU 03-09-20 {61:California:Santa Clara:3}
+JHU 03-09-20 {62:California:Santa Clara:9}
+JHU 03-09-20 {63:California:Santa Clara:11}
+JHU 03-09-20 {64:California:Santa Clara:11}
+JHU 03-09-20 {65:California:Santa Clara:20}
+JHU 03-09-20 {66:California:Santa Clara:20}
+JHU 03-09-20 {67:California:Santa Clara:32}
+JHU 03-09-20 {68:California:Santa Clara:38}
+JHU 03-09-20 {69:California:Santa Clara:38}
+JHU 03-09-20 {65:Nevada:Clark:1}
+JHU 03-09-20 {66:Nevada:Clark:1}
+JHU 03-09-20 {67:Nevada:Clark:1}
+JHU 03-09-20 {68:Nevada:Clark:2}
+JHU 03-09-20 {69:Nevada:Clark:2}
+JHU 03-09-20 {65:Texas:Fort Bend:1}
+JHU 03-09-20 {66:Texas:Fort Bend:1}
+JHU 03-09-20 {67:Texas:Fort Bend:3}
+JHU 03-09-20 {68:Texas:Fort Bend:6}
+JHU 03-09-20 {69:Texas:Fort Bend:6}
+JHU 03-09-20 {65:Washington:Grant:1}
+JHU 03-09-20 {66:Washington:Grant:1}
+JHU 03-09-20 {67:Washington:Grant:1}
+JHU 03-09-20 {68:Washington:Grant:1}
+JHU 03-09-20 {69:Washington:Grant:1}
+JHU 03-09-20 {65:Florida:Santa Rosa:1}
+JHU 03-09-20 {66:Florida:Santa Rosa:1}
+JHU 03-09-20 {67:Florida:Santa Rosa:1}
+JHU 03-09-20 {68:Florida:Santa Rosa:1}
+JHU 03-09-20 {69:Florida:Santa Rosa:1}
+JHU 03-09-20 {65:Tennessee:Williamson:1}
+JHU 03-09-20 {66:Tennessee:Williamson:1}
+JHU 03-09-20 {67:Tennessee:Williamson:1}
+JHU 03-09-20 {68:Tennessee:Williamson:1}
+JHU 03-09-20 {69:Tennessee:Williamson:1}
+JHU 03-09-20 {62:New York:New York:1}
+JHU 03-09-20 {63:New York:New York:1}
+JHU 03-09-20 {64:New York:New York:1}
+JHU 03-09-20 {65:New York:New York:4}
+JHU 03-09-20 {66:New York:New York:11}
+JHU 03-09-20 {67:New York:New York:11}
+JHU 03-09-20 {68:New York:New York:12}
+JHU 03-09-20 {69:New York:New York:19}
+JHU 03-09-20 {66:Maryland:Montgomery:3}
+JHU 03-09-20 {67:Maryland:Montgomery:3}
+JHU 03-09-20 {68:Maryland:Montgomery:4}
+JHU 03-09-20 {69:Maryland:Montgomery:4}
+JHU 03-09-20 {32:Massachusetts:Suffolk:1}
+JHU 03-09-20 {33:Massachusetts:Suffolk:1}
+JHU 03-09-20 {34:Massachusetts:Suffolk:1}
+JHU 03-09-20 {35:Massachusetts:Suffolk:1}
+JHU 03-09-20 {36:Massachusetts:Suffolk:1}
+JHU 03-09-20 {37:Massachusetts:Suffolk:1}
+JHU 03-09-20 {38:Massachusetts:Suffolk:1}
+JHU 03-09-20 {39:Massachusetts:Suffolk:1}
+JHU 03-09-20 {40:Massachusetts:Suffolk:1}
+JHU 03-09-20 {41:Massachusetts:Suffolk:1}
+JHU 03-09-20 {42:Massachusetts:Suffolk:1}
+JHU 03-09-20 {43:Massachusetts:Suffolk:1}
+JHU 03-09-20 {44:Massachusetts:Suffolk:1}
+JHU 03-09-20 {45:Massachusetts:Suffolk:1}
+JHU 03-09-20 {46:Massachusetts:Suffolk:1}
+JHU 03-09-20 {47:Massachusetts:Suffolk:1}
+JHU 03-09-20 {48:Massachusetts:Suffolk:1}
+JHU 03-09-20 {49:Massachusetts:Suffolk:1}
+JHU 03-09-20 {50:Massachusetts:Suffolk:1}
+JHU 03-09-20 {51:Massachusetts:Suffolk:1}
+JHU 03-09-20 {52:Massachusetts:Suffolk:1}
+JHU 03-09-20 {53:Massachusetts:Suffolk:1}
+JHU 03-09-20 {54:Massachusetts:Suffolk:1}
+JHU 03-09-20 {55:Massachusetts:Suffolk:1}
+JHU 03-09-20 {56:Massachusetts:Suffolk:1}
+JHU 03-09-20 {57:Massachusetts:Suffolk:1}
+JHU 03-09-20 {58:Massachusetts:Suffolk:1}
+JHU 03-09-20 {59:Massachusetts:Suffolk:1}
+JHU 03-09-20 {60:Massachusetts:Suffolk:1}
+JHU 03-09-20 {61:Massachusetts:Suffolk:1}
+JHU 03-09-20 {62:Massachusetts:Suffolk:1}
+JHU 03-09-20 {63:Massachusetts:Suffolk:1}
+JHU 03-09-20 {64:Massachusetts:Suffolk:1}
+JHU 03-09-20 {65:Massachusetts:Suffolk:1}
+JHU 03-09-20 {66:Massachusetts:Suffolk:3}
+JHU 03-09-20 {67:Massachusetts:Suffolk:3}
+JHU 03-09-20 {68:Massachusetts:Suffolk:8}
+JHU 03-09-20 {69:Massachusetts:Suffolk:8}
+JHU 03-09-20 {66:Colorado:Denver:2}
+JHU 03-09-20 {67:Colorado:Denver:2}
+JHU 03-09-20 {68:Colorado:Denver:2}
+JHU 03-09-20 {69:Colorado:Denver:2}
+JHU 03-09-20 {66:Colorado:Summit:1}
+JHU 03-09-20 {67:Colorado:Summit:1}
+JHU 03-09-20 {68:Colorado:Summit:1}
+JHU 03-09-20 {69:Colorado:Summit:1}
+JHU 03-09-20 {65:New Jersey:Bergen:2}
+JHU 03-09-20 {66:New Jersey:Bergen:2}
+JHU 03-09-20 {67:New Jersey:Bergen:4}
+JHU 03-09-20 {68:New Jersey:Bergen:4}
+JHU 03-09-20 {69:New Jersey:Bergen:4}
+JHU 03-09-20 {65:Texas:Harris:2}
+JHU 03-09-20 {66:Texas:Harris:3}
+JHU 03-09-20 {67:Texas:Harris:5}
+JHU 03-09-20 {68:Texas:Harris:5}
+JHU 03-09-20 {69:Texas:Harris:6}
+JHU 03-09-20 {65:California:San Francisco:2}
+JHU 03-09-20 {66:California:San Francisco:2}
+JHU 03-09-20 {67:California:San Francisco:9}
+JHU 03-09-20 {68:California:San Francisco:9}
+JHU 03-09-20 {69:California:San Francisco:9}
+JHU 03-09-20 {64:California:Contra Costa:1}
+JHU 03-09-20 {65:California:Contra Costa:1}
+JHU 03-09-20 {66:California:Contra Costa:3}
+JHU 03-09-20 {67:California:Contra Costa:3}
+JHU 03-09-20 {68:California:Contra Costa:9}
+JHU 03-09-20 {69:California:Contra Costa:9}
+JHU 03-09-20 {26:California:Orange:1}
+JHU 03-09-20 {27:California:Orange:1}
+JHU 03-09-20 {28:California:Orange:1}
+JHU 03-09-20 {29:California:Orange:1}
+JHU 03-09-20 {30:California:Orange:1}
+JHU 03-09-20 {31:California:Orange:1}
+JHU 03-09-20 {32:California:Orange:1}
+JHU 03-09-20 {33:California:Orange:1}
+JHU 03-09-20 {34:California:Orange:1}
+JHU 03-09-20 {35:California:Orange:1}
+JHU 03-09-20 {36:California:Orange:1}
+JHU 03-09-20 {37:California:Orange:1}
+JHU 03-09-20 {38:California:Orange:1}
+JHU 03-09-20 {39:California:Orange:1}
+JHU 03-09-20 {40:California:Orange:1}
+JHU 03-09-20 {41:California:Orange:1}
+JHU 03-09-20 {42:California:Orange:1}
+JHU 03-09-20 {43:California:Orange:1}
+JHU 03-09-20 {44:California:Orange:1}
+JHU 03-09-20 {45:California:Orange:1}
+JHU 03-09-20 {46:California:Orange:1}
+JHU 03-09-20 {47:California:Orange:1}
+JHU 03-09-20 {48:California:Orange:1}
+JHU 03-09-20 {49:California:Orange:1}
+JHU 03-09-20 {50:California:Orange:1}
+JHU 03-09-20 {51:California:Orange:1}
+JHU 03-09-20 {52:California:Orange:1}
+JHU 03-09-20 {53:California:Orange:1}
+JHU 03-09-20 {54:California:Orange:1}
+JHU 03-09-20 {55:California:Orange:1}
+JHU 03-09-20 {56:California:Orange:1}
+JHU 03-09-20 {57:California:Orange:1}
+JHU 03-09-20 {58:California:Orange:1}
+JHU 03-09-20 {59:California:Orange:1}
+JHU 03-09-20 {60:California:Orange:1}
+JHU 03-09-20 {61:California:Orange:1}
+JHU 03-09-20 {62:California:Orange:1}
+JHU 03-09-20 {63:California:Orange:1}
+JHU 03-09-20 {64:California:Orange:3}
+JHU 03-09-20 {65:California:Orange:3}
+JHU 03-09-20 {66:California:Orange:3}
+JHU 03-09-20 {67:California:Orange:3}
+JHU 03-09-20 {68:California:Orange:3}
+JHU 03-09-20 {69:California:Orange:4}
+JHU 03-09-20 {63:Massachusetts:Norfolk:1}
+JHU 03-09-20 {64:Massachusetts:Norfolk:1}
+JHU 03-09-20 {65:Massachusetts:Norfolk:1}
+JHU 03-09-20 {66:Massachusetts:Norfolk:2}
+JHU 03-09-20 {67:Massachusetts:Norfolk:2}
+JHU 03-09-20 {68:Massachusetts:Norfolk:6}
+JHU 03-09-20 {69:Massachusetts:Norfolk:6}
+JHU 03-09-20 {26:Arizona:Maricopa:1}
+JHU 03-09-20 {27:Arizona:Maricopa:1}
+JHU 03-09-20 {28:Arizona:Maricopa:1}
+JHU 03-09-20 {29:Arizona:Maricopa:1}
+JHU 03-09-20 {30:Arizona:Maricopa:1}
+JHU 03-09-20 {31:Arizona:Maricopa:1}
+JHU 03-09-20 {32:Arizona:Maricopa:1}
+JHU 03-09-20 {33:Arizona:Maricopa:1}
+JHU 03-09-20 {34:Arizona:Maricopa:1}
+JHU 03-09-20 {35:Arizona:Maricopa:1}
+JHU 03-09-20 {36:Arizona:Maricopa:1}
+JHU 03-09-20 {37:Arizona:Maricopa:1}
+JHU 03-09-20 {38:Arizona:Maricopa:1}
+JHU 03-09-20 {39:Arizona:Maricopa:1}
+JHU 03-09-20 {40:Arizona:Maricopa:1}
+JHU 03-09-20 {41:Arizona:Maricopa:1}
+JHU 03-09-20 {42:Arizona:Maricopa:1}
+JHU 03-09-20 {43:Arizona:Maricopa:1}
+JHU 03-09-20 {44:Arizona:Maricopa:1}
+JHU 03-09-20 {45:Arizona:Maricopa:1}
+JHU 03-09-20 {46:Arizona:Maricopa:1}
+JHU 03-09-20 {47:Arizona:Maricopa:1}
+JHU 03-09-20 {48:Arizona:Maricopa:1}
+JHU 03-09-20 {49:Arizona:Maricopa:1}
+JHU 03-09-20 {50:Arizona:Maricopa:1}
+JHU 03-09-20 {51:Arizona:Maricopa:1}
+JHU 03-09-20 {52:Arizona:Maricopa:1}
+JHU 03-09-20 {53:Arizona:Maricopa:1}
+JHU 03-09-20 {54:Arizona:Maricopa:1}
+JHU 03-09-20 {55:Arizona:Maricopa:1}
+JHU 03-09-20 {56:Arizona:Maricopa:1}
+JHU 03-09-20 {57:Arizona:Maricopa:1}
+JHU 03-09-20 {58:Arizona:Maricopa:1}
+JHU 03-09-20 {59:Arizona:Maricopa:1}
+JHU 03-09-20 {60:Arizona:Maricopa:1}
+JHU 03-09-20 {61:Arizona:Maricopa:1}
+JHU 03-09-20 {62:Arizona:Maricopa:1}
+JHU 03-09-20 {63:Arizona:Maricopa:1}
+JHU 03-09-20 {64:Arizona:Maricopa:1}
+JHU 03-09-20 {65:Arizona:Maricopa:1}
+JHU 03-09-20 {66:Arizona:Maricopa:2}
+JHU 03-09-20 {67:Arizona:Maricopa:2}
+JHU 03-09-20 {68:Arizona:Maricopa:2}
+JHU 03-09-20 {69:Arizona:Maricopa:2}
+JHU 03-09-20 {63:North Carolina:Wake:1}
+JHU 03-09-20 {64:North Carolina:Wake:1}
+JHU 03-09-20 {65:North Carolina:Wake:1}
+JHU 03-09-20 {66:North Carolina:Wake:1}
+JHU 03-09-20 {67:North Carolina:Wake:1}
+JHU 03-09-20 {68:North Carolina:Wake:1}
+JHU 03-09-20 {69:North Carolina:Wake:1}
+JHU 03-09-20 {63:New York:Westchester:1}
+JHU 03-09-20 {64:New York:Westchester:10}
+JHU 03-09-20 {65:New York:Westchester:18}
+JHU 03-09-20 {66:New York:Westchester:19}
+JHU 03-09-20 {67:New York:Westchester:57}
+JHU 03-09-20 {68:New York:Westchester:83}
+JHU 03-09-20 {69:New York:Westchester:98}
+JHU 03-09-20 {62:New Hampshire:Grafton:1}
+JHU 03-09-20 {63:New Hampshire:Grafton:2}
+JHU 03-09-20 {64:New Hampshire:Grafton:2}
+JHU 03-09-20 {65:New Hampshire:Grafton:2}
+JHU 03-09-20 {66:New Hampshire:Grafton:2}
+JHU 03-09-20 {67:New Hampshire:Grafton:2}
+JHU 03-09-20 {68:New Hampshire:Grafton:3}
+JHU 03-09-20 {69:New Hampshire:Grafton:3}
+JHU 03-09-20 {62:Florida:Hillsborough:1}
+JHU 03-09-20 {63:Florida:Hillsborough:2}
+JHU 03-09-20 {64:Florida:Hillsborough:2}
+JHU 03-09-20 {65:Florida:Hillsborough:2}
+JHU 03-09-20 {66:Florida:Hillsborough:2}
+JHU 03-09-20 {67:Florida:Hillsborough:2}
+JHU 03-09-20 {68:Florida:Hillsborough:2}
+JHU 03-09-20 {69:Florida:Hillsborough:2}
+JHU 03-09-20 {62:California:Placer:1}
+JHU 03-09-20 {63:California:Placer:1}
+JHU 03-09-20 {64:California:Placer:2}
+JHU 03-09-20 {65:California:Placer:2}
+JHU 03-09-20 {66:California:Placer:5}
+JHU 03-09-20 {67:California:Placer:5}
+JHU 03-09-20 {68:California:Placer:5}
+JHU 03-09-20 {69:California:Placer:7}
+JHU 03-09-20 {62:California:San Mateo:1}
+JHU 03-09-20 {63:California:San Mateo:2}
+JHU 03-09-20 {64:California:San Mateo:2}
+JHU 03-09-20 {65:California:San Mateo:2}
+JHU 03-09-20 {66:California:San Mateo:2}
+JHU 03-09-20 {67:California:San Mateo:2}
+JHU 03-09-20 {68:California:San Mateo:2}
+JHU 03-09-20 {69:California:San Mateo:2}
+JHU 03-09-20 {62:California:Sonoma:1}
+JHU 03-09-20 {63:California:Sonoma:1}
+JHU 03-09-20 {64:California:Sonoma:1}
+JHU 03-09-20 {65:California:Sonoma:1}
+JHU 03-09-20 {66:California:Sonoma:1}
+JHU 03-09-20 {67:California:Sonoma:1}
+JHU 03-09-20 {68:California:Sonoma:1}
+JHU 03-09-20 {69:California:Sonoma:3}
+JHU 03-09-20 {62:Oregon:Umatilla:1}
+JHU 03-09-20 {63:Oregon:Umatilla:1}
+JHU 03-09-20 {64:Oregon:Umatilla:1}
+JHU 03-09-20 {65:Oregon:Umatilla:1}
+JHU 03-09-20 {66:Oregon:Umatilla:1}
+JHU 03-09-20 {67:Oregon:Umatilla:1}
+JHU 03-09-20 {68:Oregon:Umatilla:1}
+JHU 03-09-20 {69:Oregon:Umatilla:1}
+JHU 03-09-20 {63:Georgia:Fulton:2}
+JHU 03-09-20 {64:Georgia:Fulton:2}
+JHU 03-09-20 {65:Georgia:Fulton:2}
+JHU 03-09-20 {66:Georgia:Fulton:2}
+JHU 03-09-20 {67:Georgia:Fulton:3}
+JHU 03-09-20 {68:Georgia:Fulton:3}
+JHU 03-09-20 {69:Georgia:Fulton:5}
+JHU 03-09-20 {60:Oregon:Washington:1}
+JHU 03-09-20 {61:Oregon:Washington:1}
+JHU 03-09-20 {62:Oregon:Washington:2}
+JHU 03-09-20 {63:Oregon:Washington:2}
+JHU 03-09-20 {64:Oregon:Washington:2}
+JHU 03-09-20 {65:Oregon:Washington:2}
+JHU 03-09-20 {66:Oregon:Washington:2}
+JHU 03-09-20 {67:Oregon:Washington:3}
+JHU 03-09-20 {68:Oregon:Washington:8}
+JHU 03-09-20 {69:Oregon:Washington:8}
+JHU 03-09-20 {60:Washington:Snohomish:1}
+JHU 03-09-20 {61:Washington:Snohomish:2}
+JHU 03-09-20 {62:Washington:Snohomish:4}
+JHU 03-09-20 {63:Washington:Snohomish:6}
+JHU 03-09-20 {64:Washington:Snohomish:8}
+JHU 03-09-20 {65:Washington:Snohomish:18}
+JHU 03-09-20 {66:Washington:Snohomish:19}
+JHU 03-09-20 {67:Washington:Snohomish:27}
+JHU 03-09-20 {68:Washington:Snohomish:31}
+JHU 03-09-20 {69:Washington:Snohomish:31}
+JHU 03-09-20 {52:California:Humboldt:1}
+JHU 03-09-20 {53:California:Humboldt:1}
+JHU 03-09-20 {54:California:Humboldt:1}
+JHU 03-09-20 {55:California:Humboldt:1}
+JHU 03-09-20 {56:California:Humboldt:1}
+JHU 03-09-20 {57:California:Humboldt:1}
+JHU 03-09-20 {58:California:Humboldt:1}
+JHU 03-09-20 {59:California:Humboldt:1}
+JHU 03-09-20 {60:California:Humboldt:1}
+JHU 03-09-20 {61:California:Humboldt:1}
+JHU 03-09-20 {62:California:Humboldt:1}
+JHU 03-09-20 {63:California:Humboldt:1}
+JHU 03-09-20 {64:California:Humboldt:1}
+JHU 03-09-20 {65:California:Humboldt:1}
+JHU 03-09-20 {66:California:Humboldt:1}
+JHU 03-09-20 {67:California:Humboldt:1}
+JHU 03-09-20 {68:California:Humboldt:1}
+JHU 03-09-20 {69:California:Humboldt:1}
+JHU 03-09-20 {52:California:Sacramento:1}
+JHU 03-09-20 {53:California:Sacramento:1}
+JHU 03-09-20 {54:California:Sacramento:1}
+JHU 03-09-20 {55:California:Sacramento:1}
+JHU 03-09-20 {56:California:Sacramento:1}
+JHU 03-09-20 {57:California:Sacramento:1}
+JHU 03-09-20 {58:California:Sacramento:2}
+JHU 03-09-20 {59:California:Sacramento:2}
+JHU 03-09-20 {60:California:Sacramento:2}
+JHU 03-09-20 {61:California:Sacramento:2}
+JHU 03-09-20 {62:California:Sacramento:2}
+JHU 03-09-20 {63:California:Sacramento:2}
+JHU 03-09-20 {64:California:Sacramento:2}
+JHU 03-09-20 {65:California:Sacramento:2}
+JHU 03-09-20 {66:California:Sacramento:2}
+JHU 03-09-20 {67:California:Sacramento:2}
+JHU 03-09-20 {68:California:Sacramento:2}
+JHU 03-09-20 {69:California:Sacramento:2}
+JHU 03-09-20 {42:California:San Diego:1}
+JHU 03-09-20 {43:California:San Diego:1}
+JHU 03-09-20 {44:California:San Diego:2}
+JHU 03-09-20 {45:California:San Diego:2}
+JHU 03-09-20 {46:California:San Diego:2}
+JHU 03-09-20 {47:California:San Diego:2}
+JHU 03-09-20 {48:California:San Diego:2}
+JHU 03-09-20 {49:California:San Diego:2}
+JHU 03-09-20 {50:California:San Diego:2}
+JHU 03-09-20 {51:California:San Diego:2}
+JHU 03-09-20 {52:California:San Diego:2}
+JHU 03-09-20 {53:California:San Diego:2}
+JHU 03-09-20 {54:California:San Diego:2}
+JHU 03-09-20 {55:California:San Diego:2}
+JHU 03-09-20 {56:California:San Diego:2}
+JHU 03-09-20 {57:California:San Diego:2}
+JHU 03-09-20 {58:California:San Diego:2}
+JHU 03-09-20 {59:California:San Diego:2}
+JHU 03-09-20 {60:California:San Diego:2}
+JHU 03-09-20 {61:California:San Diego:2}
+JHU 03-09-20 {62:California:San Diego:2}
+JHU 03-09-20 {63:California:San Diego:2}
+JHU 03-09-20 {64:California:San Diego:2}
+JHU 03-09-20 {65:California:San Diego:3}
+JHU 03-09-20 {66:California:San Diego:3}
+JHU 03-09-20 {67:California:San Diego:3}
+JHU 03-09-20 {68:California:San Diego:3}
+JHU 03-09-20 {69:California:San Diego:3}
+JHU 03-09-20 {34:California:San Benito:2}
+JHU 03-09-20 {35:California:San Benito:2}
+JHU 03-09-20 {36:California:San Benito:2}
+JHU 03-09-20 {37:California:San Benito:2}
+JHU 03-09-20 {38:California:San Benito:2}
+JHU 03-09-20 {39:California:San Benito:2}
+JHU 03-09-20 {40:California:San Benito:2}
+JHU 03-09-20 {41:California:San Benito:2}
+JHU 03-09-20 {42:California:San Benito:2}
+JHU 03-09-20 {43:California:San Benito:2}
+JHU 03-09-20 {44:California:San Benito:2}
+JHU 03-09-20 {45:California:San Benito:2}
+JHU 03-09-20 {46:California:San Benito:2}
+JHU 03-09-20 {47:California:San Benito:2}
+JHU 03-09-20 {48:California:San Benito:2}
+JHU 03-09-20 {49:California:San Benito:2}
+JHU 03-09-20 {50:California:San Benito:2}
+JHU 03-09-20 {51:California:San Benito:2}
+JHU 03-09-20 {52:California:San Benito:2}
+JHU 03-09-20 {53:California:San Benito:2}
+JHU 03-09-20 {54:California:San Benito:2}
+JHU 03-09-20 {55:California:San Benito:2}
+JHU 03-09-20 {56:California:San Benito:2}
+JHU 03-09-20 {57:California:San Benito:2}
+JHU 03-09-20 {58:California:San Benito:2}
+JHU 03-09-20 {59:California:San Benito:2}
+JHU 03-09-20 {60:California:San Benito:2}
+JHU 03-09-20 {61:California:San Benito:2}
+JHU 03-09-20 {62:California:San Benito:2}
+JHU 03-09-20 {63:California:San Benito:2}
+JHU 03-09-20 {64:California:San Benito:2}
+JHU 03-09-20 {65:California:San Benito:2}
+JHU 03-09-20 {66:California:San Benito:2}
+JHU 03-09-20 {67:California:San Benito:2}
+JHU 03-09-20 {68:California:San Benito:2}
+JHU 03-09-20 {69:California:San Benito:2}
+JHU 03-09-20 {26:California:Los Angeles:1}
+JHU 03-09-20 {27:California:Los Angeles:1}
+JHU 03-09-20 {28:California:Los Angeles:1}
+JHU 03-09-20 {29:California:Los Angeles:1}
+JHU 03-09-20 {30:California:Los Angeles:1}
+JHU 03-09-20 {31:California:Los Angeles:1}
+JHU 03-09-20 {32:California:Los Angeles:1}
+JHU 03-09-20 {33:California:Los Angeles:1}
+JHU 03-09-20 {34:California:Los Angeles:1}
+JHU 03-09-20 {35:California:Los Angeles:1}
+JHU 03-09-20 {36:California:Los Angeles:1}
+JHU 03-09-20 {37:California:Los Angeles:1}
+JHU 03-09-20 {38:California:Los Angeles:1}
+JHU 03-09-20 {39:California:Los Angeles:1}
+JHU 03-09-20 {40:California:Los Angeles:1}
+JHU 03-09-20 {41:California:Los Angeles:1}
+JHU 03-09-20 {42:California:Los Angeles:1}
+JHU 03-09-20 {43:California:Los Angeles:1}
+JHU 03-09-20 {44:California:Los Angeles:1}
+JHU 03-09-20 {45:California:Los Angeles:1}
+JHU 03-09-20 {46:California:Los Angeles:1}
+JHU 03-09-20 {47:California:Los Angeles:1}
+JHU 03-09-20 {48:California:Los Angeles:1}
+JHU 03-09-20 {49:California:Los Angeles:1}
+JHU 03-09-20 {50:California:Los Angeles:1}
+JHU 03-09-20 {51:California:Los Angeles:1}
+JHU 03-09-20 {52:California:Los Angeles:1}
+JHU 03-09-20 {53:California:Los Angeles:1}
+JHU 03-09-20 {54:California:Los Angeles:1}
+JHU 03-09-20 {55:California:Los Angeles:1}
+JHU 03-09-20 {56:California:Los Angeles:1}
+JHU 03-09-20 {57:California:Los Angeles:1}
+JHU 03-09-20 {58:California:Los Angeles:1}
+JHU 03-09-20 {59:California:Los Angeles:1}
+JHU 03-09-20 {60:California:Los Angeles:1}
+JHU 03-09-20 {61:California:Los Angeles:1}
+JHU 03-09-20 {62:California:Los Angeles:1}
+JHU 03-09-20 {63:California:Los Angeles:1}
+JHU 03-09-20 {64:California:Los Angeles:7}
+JHU 03-09-20 {65:California:Los Angeles:11}
+JHU 03-09-20 {66:California:Los Angeles:13}
+JHU 03-09-20 {67:California:Los Angeles:14}
+JHU 03-09-20 {68:California:Los Angeles:14}
+JHU 03-09-20 {69:California:Los Angeles:14}
+JHU 03-09-20 {22:Washington:King:1}
+JHU 03-09-20 {23:Washington:King:1}
+JHU 03-09-20 {24:Washington:King:1}
+JHU 03-09-20 {25:Washington:King:1}
+JHU 03-09-20 {26:Washington:King:1}
+JHU 03-09-20 {27:Washington:King:1}
+JHU 03-09-20 {28:Washington:King:1}
+JHU 03-09-20 {29:Washington:King:1}
+JHU 03-09-20 {30:Washington:King:1}
+JHU 03-09-20 {31:Washington:King:1}
+JHU 03-09-20 {32:Washington:King:1}
+JHU 03-09-20 {33:Washington:King:1}
+JHU 03-09-20 {34:Washington:King:1}
+JHU 03-09-20 {35:Washington:King:1}
+JHU 03-09-20 {36:Washington:King:1}
+JHU 03-09-20 {37:Washington:King:1}
+JHU 03-09-20 {38:Washington:King:1}
+JHU 03-09-20 {39:Washington:King:1}
+JHU 03-09-20 {40:Washington:King:1}
+JHU 03-09-20 {41:Washington:King:1}
+JHU 03-09-20 {42:Washington:King:1}
+JHU 03-09-20 {43:Washington:King:1}
+JHU 03-09-20 {44:Washington:King:1}
+JHU 03-09-20 {45:Washington:King:1}
+JHU 03-09-20 {46:Washington:King:1}
+JHU 03-09-20 {47:Washington:King:1}
+JHU 03-09-20 {48:Washington:King:1}
+JHU 03-09-20 {49:Washington:King:1}
+JHU 03-09-20 {50:Washington:King:1}
+JHU 03-09-20 {51:Washington:King:1}
+JHU 03-09-20 {52:Washington:King:1}
+JHU 03-09-20 {53:Washington:King:1}
+JHU 03-09-20 {54:Washington:King:1}
+JHU 03-09-20 {55:Washington:King:1}
+JHU 03-09-20 {56:Washington:King:1}
+JHU 03-09-20 {57:Washington:King:1}
+JHU 03-09-20 {58:Washington:King:1}
+JHU 03-09-20 {59:Washington:King:1}
+JHU 03-09-20 {60:Washington:King:6}
+JHU 03-09-20 {61:Washington:King:9}
+JHU 03-09-20 {62:Washington:King:14}
+JHU 03-09-20 {63:Washington:King:21}
+JHU 03-09-20 {64:Washington:King:31}
+JHU 03-09-20 {65:Washington:King:51}
+JHU 03-09-20 {66:Washington:King:58}
+JHU 03-09-20 {67:Washington:King:71}
+JHU 03-09-20 {68:Washington:King:83}
+JHU 03-09-20 {69:Washington:King:83}
+JHU 03-09-20 {24:Illinois:Cook:1}
+JHU 03-09-20 {25:Illinois:Cook:1}
+JHU 03-09-20 {26:Illinois:Cook:1}
+JHU 03-09-20 {27:Illinois:Cook:1}
+JHU 03-09-20 {28:Illinois:Cook:1}
+JHU 03-09-20 {29:Illinois:Cook:1}
+JHU 03-09-20 {30:Illinois:Cook:1}
+JHU 03-09-20 {31:Illinois:Cook:2}
+JHU 03-09-20 {32:Illinois:Cook:2}
+JHU 03-09-20 {33:Illinois:Cook:2}
+JHU 03-09-20 {34:Illinois:Cook:2}
+JHU 03-09-20 {35:Illinois:Cook:2}
+JHU 03-09-20 {36:Illinois:Cook:2}
+JHU 03-09-20 {37:Illinois:Cook:2}
+JHU 03-09-20 {38:Illinois:Cook:2}
+JHU 03-09-20 {39:Illinois:Cook:2}
+JHU 03-09-20 {40:Illinois:Cook:2}
+JHU 03-09-20 {41:Illinois:Cook:2}
+JHU 03-09-20 {42:Illinois:Cook:2}
+JHU 03-09-20 {43:Illinois:Cook:2}
+JHU 03-09-20 {44:Illinois:Cook:2}
+JHU 03-09-20 {45:Illinois:Cook:2}
+JHU 03-09-20 {46:Illinois:Cook:2}
+JHU 03-09-20 {47:Illinois:Cook:2}
+JHU 03-09-20 {48:Illinois:Cook:2}
+JHU 03-09-20 {49:Illinois:Cook:2}
+JHU 03-09-20 {50:Illinois:Cook:2}
+JHU 03-09-20 {51:Illinois:Cook:2}
+JHU 03-09-20 {52:Illinois:Cook:2}
+JHU 03-09-20 {53:Illinois:Cook:2}
+JHU 03-09-20 {54:Illinois:Cook:2}
+JHU 03-09-20 {55:Illinois:Cook:2}
+JHU 03-09-20 {56:Illinois:Cook:2}
+JHU 03-09-20 {57:Illinois:Cook:2}
+JHU 03-09-20 {58:Illinois:Cook:2}
+JHU 03-09-20 {59:Illinois:Cook:2}
+JHU 03-09-20 {60:Illinois:Cook:2}
+JHU 03-09-20 {61:Illinois:Cook:3}
+JHU 03-09-20 {62:Illinois:Cook:4}
+JHU 03-09-20 {63:Illinois:Cook:4}
+JHU 03-09-20 {64:Illinois:Cook:4}
+JHU 03-09-20 {65:Illinois:Cook:5}
+JHU 03-09-20 {66:Illinois:Cook:5}
+JHU 03-09-20 {67:Illinois:Cook:6}
+JHU 03-09-20 {68:Illinois:Cook:7}
+JHU 03-09-20 {69:Illinois:Cook:7}

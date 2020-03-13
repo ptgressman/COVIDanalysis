@@ -204,6 +204,7 @@ found_states = []
 state_indices = {}
 other_indices = []
 parent_index = []
+for_import = []
 for index,item in enumerate(CSV):
     if item[0] in USstateslist:
         if item[0] in found_states:
@@ -219,6 +220,11 @@ for index,item in enumerate(CSV):
                 abbrev = re_abbrev.group(1)
                 if abbrev in USstatesabbr:
                     statename = USstateslist[USstatesabbr.index(abbrev)]
+                    prefixsearch = re.search(r'([^,]*),',item[0])
+                    if prefixsearch is not None:
+                        prefixname = prefixsearch.group(1)
+                        prefixname = re.sub(' County','',prefixname)
+                        for_import.append([index,statename,prefixname])
                     if statename not in found_states:
                         print('ADDING: Found record for',item[0])
                         other_indices.append(index)
@@ -235,6 +241,19 @@ for index,item in enumerate(CSV):
                 print('ADDING: Found record for',item[0])
                 other_indices.append(index)
                 parent_index.append(-1)
+
+
+# export_report = ''
+# for item in for_import:
+#     for index in range(len(CSV[item[0]])):
+#         if index > 3:
+#             cellval = int(CSV[item[0]][index])
+#             if cellval > 0:
+#                 outstr = '{' + str(index-4+22) + ':' + item[1] + ':' + item[2] + ':' + str(cellval) + '}'
+#                 export_report += 'JHU 03-09-20 ' + outstr + '\n'
+# file = open('jhu_export.txt','w')
+# file.write(export_report)
+# file.close()
 
 my_aggregate_data['US'] = []
 my_aggregate_smoothlog = {}
