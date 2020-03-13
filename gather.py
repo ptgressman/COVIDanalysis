@@ -29,9 +29,6 @@ else:
     file.write(url_content)
     file.close()
 
-filename = 'wayback10.html'
-daynumber -= 3
-url_content = open(filename,'r').read()
 
 url_content = re.sub(r'\n','',url_content)
 url_content = re.sub(r'&nbsp;','',url_content)

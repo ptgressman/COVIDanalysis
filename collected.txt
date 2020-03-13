@@ -1,11 +1,53 @@
-Wayback WA DOH {71:Washington:Clark:1}
-Wayback WA DOH {71:Washington:Grant:1}
-Wayback WA DOH {71:Washington:Jefferson:1}
-Wayback WA DOH {71:Washington:King:116}
-Wayback WA DOH {71:Washington:Kitsap:1}
-Wayback WA DOH {71:Washington:Kittitas:1}
-Wayback WA DOH {71:Washington:Pierce:4}
-Wayback WA DOH {71:Washington:Snohomish:37}
+Twitter {72:Colorado:Denver:9}
+Twitter {71:Colorado:Denver:6}
+Articles Online {72:New York:New York:53}
+Articles Online {71:Georgia:Cobb:8}
+
+Texas DSHS {72:Texas:Collin:3}
+Texas DSHS {72:Texas:Dallas:2}
+Texas DSHS {72:Texas:Fort Bend:6}
+Texas DSHS {72:Texas:Gregg:1}
+Texas DSHS {72:Texas:Harris:7}
+Texas DSHS {72:Texas:Montgomery:1}
+Texas DSHS {72:Texas:Tarrant:1}
+
+Oregon DOH {70:Oregon:Umatilla:1}
+Oregon DOH {70:Oregon:Marion:1}
+Oregon DOH {71:Oregon:Umatilla:1}
+Oregon DOH {71:Oregon:Marion:1}
+Oregon DOH {72:Oregon:Umatilla:2}
+Oregon DOH {72:Oregon:Marion:2}
+
+Mass.gov {70:Massachusetts:Berkshire:7}
+Mass.gov {70:Massachusetts:Essex:1}
+Mass.gov {70:Massachusetts:Middlesex:41}
+Mass.gov {70:Massachusetts:Norfolk:22}
+Mass.gov {70:Massachusetts:Suffolk:20}
+Mass.gov {70:Massachusetts:Worcester:1}
+
+Mass.gov {71:Massachusetts:Berkshire:7}
+Mass.gov {71:Massachusetts:Essex:1}
+Mass.gov {71:Massachusetts:Middlesex:44}
+Mass.gov {71:Massachusetts:Norfolk:23}
+Mass.gov {71:Massachusetts:Suffolk:19}
+Mass.gov {71:Massachusetts:Worcester:1}
+
+Mass.gov {72:Massachusetts:Berkshire:9}
+Mass.gov {72:Massachusetts:Essex:2}
+Mass.gov {72:Massachusetts:Middlesex:49}
+Mass.gov {72:Massachusetts:Norfolk:24}
+Mass.gov {72:Massachusetts:Suffolk:22}
+Mass.gov {72:Massachusetts:Worcester:1}
+Mass.gov {72:Massachusetts:Unknown:1}
+
+Wayback WA DOH {70:Washington:Clark:1}
+Wayback WA DOH {70:Washington:Grant:1}
+Wayback WA DOH {70:Washington:Jefferson:1}
+Wayback WA DOH {70:Washington:King:116}
+Wayback WA DOH {70:Washington:Kitsap:1}
+Wayback WA DOH {70:Washington:Kittitas:1}
+Wayback WA DOH {70:Washington:Pierce:4}
+Wayback WA DOH {70:Washington:Snohomish:37}
 Wayback WA DOH {71:Washington:Clark:1}
 Wayback WA DOH {71:Washington:Grant:1}
 Wayback WA DOH {71:Washington:Jefferson:1}
@@ -67,7 +109,7 @@ wayback10.html {70:California:Fresno:1}
 wayback10.html {70:California:Riverside:1}
 wayback10.html {70:California:Shasta:1}
 wayback10.html {70:New York:Westchester:98}
-wayback10.html {70:New York:New York City:19}
+wayback10.html {70:New York:New York:19}
 wayback10.html {70:New York:Nassau:17}
 wayback10.html {70:New York:Rockland:4}
 wayback10.html {70:New York:Saratoga:2}
@@ -91,8 +133,8 @@ wayback11.html {71:California:Madera:1}
 wayback11.html {71:California:Fresno:1}
 wayback11.html {71:California:Riverside:1}
 wayback11.html {71:California:Shasta:1}
-wayback11.html {71:New York:Westchester:98}
-wayback11.html {71:New York:New York City:19}
+online sleuthing {71:New York:Westchester:108}
+wayback11.html {71:New York:New York:19}
 wayback11.html {71:New York:Nassau:17}
 wayback11.html {71:New York:Rockland:4}
 wayback11.html {71:New York:Saratoga:2}
