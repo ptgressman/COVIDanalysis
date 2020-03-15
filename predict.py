@@ -5,9 +5,87 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def polyfit(snippet,degree):
+    size = len(snippet)
+    basis = []
+    my_sample = []
+    for index in range(size+1):
+        my_sample.append(0.0)
+    for index in range(degree+1):
+        basisvec = []
+        for subind in range(size+1):
+            if index == 0:
+                basisvec.append(1)
+            else:
+                basisvec.append(subind**index)
+        basis.append(basisvec)
+        for prevind in range(len(basis)-1):
+            dpsum = 0.0
+            for subindex in range(size):
+                dpsum += basis[prevind][subindex] * basis[-1][subindex]
+            for subindex in range(size+1):
+                basis[-1][subindex] = basis[-1][subindex] - basis[prevind][subindex] * dpsum
+        dpsum = 0.0
+        for subindex in range(size):
+            dpsum += basis[-1][subindex] * basis[-1][subindex]
+        for subindex in range(size+1):
+            basis[-1][subindex] = basis[-1][subindex] / sqrt(dpsum)
+        dpsum = 0.0
+        for subind in range(size):
+            dpsum += snippet[subind]*basis[index][subind]
+        old_sample = []
+        for i in range(len(my_sample)):
+            old_sample.append(my_sample[i])
+        searching = True
+        factor = 1.0
+        while searching:
+            for i in range(len(my_sample)):
+                my_sample[i] = old_sample[i]
+            dpsum = 0.0
+            for subind in range(size):
+                dpsum += snippet[subind]*basis[index][subind]
+            for subind in range(size+1):
+                my_sample[subind] += factor * dpsum * basis[index][subind]
+            delta = my_sample[-1] - my_sample[-2]
+            if delta >= 0.0 and (index <=1 or delta <= 1.05*slope):
+                searching = False
+            else:
+                factor *= 0.95
+        if index == 1:
+            slope = factor * dpsum * (basis[1][1] - basis[1][0])
+
+    return my_sample
+
 import data_analyze
 big_outbreaks = 100
 data = data_analyze.my_aggregate_smoothlog
+
+def gen_samples(size):
+    samples = []
+    for slopeno in range(301):
+        slope = slopeno / 300.0 * 5.0
+        packet = []
+        for index in range(size+1):
+            packet.append(slope * index)
+        samples.append(packet)
+    for slopeno in range(31):
+        slope = slopeno / 30.0 * 2.0
+        for coeffno in range(31):
+            coeff = coeffno / 30.0 * 7.0 + 1.0
+            packet = []
+            for index in range(size+1):
+                packet.append(exp(index * slope-coeff))
+            samples.append(packet)
+            packet = []
+            for index in range(size+1):
+                packet.append(-exp(-index * slope-coeff))
+            samples.append(packet)
+    return samples
+
+
+
+
+
 
 def instate(value):
     cumlsum = 0
@@ -17,7 +95,7 @@ def instate(value):
         comparator *= 2
     return cumlsum
 
-silent = True
+silent = False
 
 
 
@@ -29,18 +107,21 @@ def matchscore(list1,list2):
         dotp += (list1[index] - list2[index])
     return [sum*len(list1) - (dotp * dotp),dotp / len(list1)]
 
-def find_analogue(thislist,datadict,neededspace=1):
+def find_analogue(thislist,datadict,samples,neededspace=1):
     score = 999999.0
     future = None
     size = len(thislist)
-    for index in range(301):
-        shortlist = []
-        for subind in range(size+1):
-            shortlist.append(subind*index/100)
+    using_real_data = False
+#    for index in range(301):
+#        shortlist = []
+#        for subind in range(size+1):
+#            shortlist.append(subind*index/100)
+    special_samples = [polyfit(thislist,1),polyfit(thislist,2)]
+    for shortlist in special_samples:
         matchdat = matchscore(thislist,shortlist)
         newfuture = shortlist[-1] + matchdat[1]
         ratejump = newfuture - thislist[-1] - (thislist[-1] - thislist[0])/len(thislist)
-        if (matchdat[0] < score) and (newfuture >= thislist[-1]) and (ratejump < 0.0):
+        if (matchdat[0] < score) and (newfuture >= thislist[-1]): #and (ratejump < 0.0):
             score = matchdat[0]
             future = newfuture
     linear_future = future
@@ -65,14 +146,22 @@ def find_analogue(thislist,datadict,neededspace=1):
                         if (matchdat[0] < score) and (newfuture >= thislist[-1]) and (ratejump < 1.0):
                             score = matchdat[0]
                             future = newfuture
+                            if not using_real_data:
+                                print("X",end='')
+                                using_real_data =True
                         elif (matchdat[0] < score) and (newfuture >=thislist[-1]) and ((future is not None) and (newfuture <= future)):
                             score = matchdat[0]
                             future = newfuture
+                            if not using_real_data:
+                                print("X",end='')
+                                using_real_data =True
     if (score > 4.0):
         return None
     if future is not None and linear_future is not None:
-        future = 0.50 * future + 0.50 * linear_future
+        future = 0.1 * future + 0.9 * linear_future
     return future
+
+samples = gen_samples(5)
 
 notable_labels = []
 for place in data_analyze.my_aggregate_data:
@@ -84,9 +173,9 @@ for place in data_analyze.my_aggregate_data:
         if reference < ln(big_outbreaks):
             stopped = True          #Too Few Cases To Forecast
         for loop in range(7):
-            shortlist = data[place][len(data[place])-5:len(data[place])]
+            shortlist = data[place][len(data[place])-7:len(data[place])]
             if not stopped:
-                outcome = find_analogue(shortlist,data,3)
+                outcome = find_analogue(shortlist,data,samples,3)
                 if outcome != None:
                     if not silent:
                         print(exp(outcome),end=', ',flush=True)
@@ -185,6 +274,9 @@ for key in toplot:
                 ymax = value
         axs[int(count/2),count%2].plot(x,y)
         axs[int(count/2),count%2].set_title(key)
+        today = exp(data[key][-8])/10
+        next  = exp(data[key][-1])
+        axs[int(count/2),count%2].plot([0,0],[today,next])
 
 
 fig.tight_layout(pad=2.0)
