@@ -4,6 +4,7 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 
+backlog = 0
 
 def polyfit(snippet,degree):
     size = len(snippet)
@@ -47,7 +48,7 @@ def polyfit(snippet,degree):
             for subind in range(size+1):
                 my_sample[subind] += factor * dpsum * basis[index][subind]
             delta = my_sample[-1] - my_sample[-2]
-            if delta >= 0.0 and (index <=1 or delta <= 1.05*slope):
+            if delta >= 0.0 and (index <=1 or delta <= 1.01428*slope):
                 searching = False
             else:
                 factor *= 0.95
@@ -58,7 +59,7 @@ def polyfit(snippet,degree):
 
 import data_analyze
 big_outbreaks = 100
-data = data_analyze.my_aggregate_smoothlog
+
 
 def gen_samples(size):
     samples = []
@@ -161,124 +162,139 @@ def find_analogue(thislist,datadict,samples,neededspace=1):
         future = 0.1 * future + 0.9 * linear_future
     return future
 
-samples = gen_samples(5)
+def do_analysis(remove):
+    print(remove)
+    datapackage = data_analyze.DataProcessor(remove)
+    data = datapackage.my_aggregate_smoothlog
+    my_aggregate_data = datapackage.my_aggregate_data
+    samples = gen_samples(5)
 
-notable_labels = []
-for place in data_analyze.my_aggregate_data:
-    if place != 'date':
-        if not silent:
-            print(place + ' ',end='',flush=True)
-        stopped = False
-        reference = data[place][-1]
-        if reference < ln(big_outbreaks):
-            stopped = True          #Too Few Cases To Forecast
-        for loop in range(7):
-            shortlist = data[place][len(data[place])-7:len(data[place])]
+    notable_labels = []
+    for place in my_aggregate_data:
+        if place != 'date':
+            if not silent:
+                print(place + ' ',end='',flush=True)
+            stopped = False
+            reference = data[place][-1]
+            if reference < ln(big_outbreaks):
+                stopped = True          #Too Few Cases To Forecast
+            for loop in range(7):
+                shortlist = data[place][len(data[place])-7:len(data[place])]
+                if not stopped:
+                    outcome = find_analogue(shortlist,data,samples,3)
+                    if outcome != None:
+                        if not silent:
+                            print(exp(outcome),end=', ',flush=True)
+                        data[place].append(outcome)
+                    else:
+                        stopped = True
             if not stopped:
-                outcome = find_analogue(shortlist,data,samples,3)
-                if outcome != None:
-                    if not silent:
-                        print(exp(outcome),end=', ',flush=True)
-                    data[place].append(outcome)
-                else:
-                    stopped = True
-        if not stopped:
-            notable_labels.append(place)
-        if not silent:
-            print('')
+                notable_labels.append(place)
+            if not silent:
+                print('')
 
-with open('predict.csv','w') as file:
-    file.write('Locale,')
-    datelist = data['date']
-    for index,date in enumerate(datelist):
-        file.write(date)
-        if index < len(datelist)-1:
-            file.write(',')
-        else:
-            file.write('\n')
-    for locale in data.keys():
-        if (locale != 'date'):
-            file.write('"' + locale + '",')
-            predlist = data[locale]
-            for index,popn in enumerate(predlist):
-                if (popn > -10):
-                    outstr = str(exp(popn))
-                else:
-                    outstr = ''
-                file.write(outstr)
-                if index < len(predlist)-1:
-                    file.write(',')
-                else:
-                    file.write('\n')
+    with open('predict.csv','w') as file:
+        file.write('Locale,')
+        datelist = data['date']
+        for index,date in enumerate(datelist):
+            file.write(date)
+            if index < len(datelist)-1:
+                file.write(',')
+            else:
+                file.write('\n')
+        for locale in data.keys():
+            if (locale != 'date'):
+                file.write('"' + locale + '",')
+                predlist = data[locale]
+                for index,popn in enumerate(predlist):
+                    if (popn > -10):
+                        outstr = str(exp(popn))
+                    else:
+                        outstr = ''
+                    file.write(outstr)
+                    if index < len(predlist)-1:
+                        file.write(',')
+                    else:
+                        file.write('\n')
 
-shorter_dict = {}
-growth = []
-for key in notable_labels:
-    shorter_dict[key] = data[key]
-    growth.append([exp(data[key][-5]) - exp(data[key][-8]),key])
-growth.sort(reverse=True)
+    shorter_dict = {}
+    growth = []
+    for key in notable_labels:
+        shorter_dict[key] = data[key]
+        growth.append([exp(data[key][-5]) - exp(data[key][-8]),key])
+    growth.sort(reverse=True)
 
-report = '7-Day COVID-19 Forecast: ' + data['date'][-1] + '\n'
-report += 'Biggest Anticipated Increases' + '\n'
+    report = '7-Day COVID-19 Forecast: ' + data['date'][-1] + '\n'
+    report += 'Biggest Anticipated Increases' + '\n'
 
-toplot = []
-for index in range(10):
-    lockey = growth[index][1]
-    mykey = lockey
-    begin_no = int(exp(shorter_dict[mykey][-8]))
-    end_no =  int(exp(shorter_dict[mykey][-1]))
-    if (end_no >= 2 * begin_no):
-        lockey += '**'
-    if (end_no >= 3 * begin_no):
-        lockey += '*'
-    if (end_no >= 4 * begin_no):
-        lockey += '*'
-    lockey = (lockey + ' ' * 17)[:17]
-    toplot.append(mykey)
-    report += lockey #+ ' ' + '%7d' % begin_no + ' +' + '%7d' % (end_no - begin_no) + ' -> ' + '%7d' % end_no + '\n'
-    #report += ' ' * 18
-    for futureindex in range(-8,0):
-        report += '%7d' % int(exp(shorter_dict[mykey][futureindex]))
-    report += '\n' + ' ' * 17
-    for futureindex in range(-8,0):
-        report += '%+7d' % int(exp(shorter_dict[mykey][futureindex]) - exp(shorter_dict[mykey][futureindex-1]))
-    report += '\n'
+    toplot = []
+    for index in range(10):
+        lockey = growth[index][1]
+        mykey = lockey
+        begin_no = int(exp(shorter_dict[mykey][-8]))
+        end_no =  int(exp(shorter_dict[mykey][-1]))
+        if (end_no >= 2 * begin_no):
+            lockey += '**'
+        if (end_no >= 3 * begin_no):
+            lockey += '*'
+        if (end_no >= 4 * begin_no):
+            lockey += '*'
+        lockey = (lockey + ' ' * 17)[:17]
+        toplot.append(mykey)
+        report += lockey #+ ' ' + '%7d' % begin_no + ' +' + '%7d' % (end_no - begin_no) + ' -> ' + '%7d' % end_no + '\n'
+        #report += ' ' * 18
+        for futureindex in range(-8,0):
+            report += '%7d' % int(exp(shorter_dict[mykey][futureindex]))
+        report += '\n' + ' ' * 17
+        for futureindex in range(-8,0):
+            report += '%+7d' % int(exp(shorter_dict[mykey][futureindex]) - exp(shorter_dict[mykey][futureindex-1]))
+        report += '\n'
 
-print(report)
+    print(report)
 
+    if remove == 0:
+        fig, axs = plt.subplots(5,2,sharex=True,sharey=True,figsize=(10,16))
 
-fig, axs = plt.subplots(5,2,sharex=True,sharey=True,figsize=(10,16))
-
-count = -1
-xmin = 99999.0
-xmax = -1.0
-ymin = 99999.0
-ymax = -1.0
-for key in toplot:
-    x = []
-    y = []
-    baseline = data[key][-8]
-    count += 1
-    for index,value in enumerate(data[key]):
-        if (value > -1):
-            newval = exp(value)
-            x.append(index-len(data[key])+8)
-            y.append(newval)
-            if index < xmin:
-                xmin = index
-            if index > xmax:
-                xmax = index
-            if newval < ymin:
-                ymin = value
-            if newval > ymax:
-                ymax = value
-        axs[int(count/2),count%2].plot(x,y)
-        axs[int(count/2),count%2].set_title(key)
-        today = exp(data[key][-8])/10
-        next  = exp(data[key][-1])
-        axs[int(count/2),count%2].plot([0,0],[today,next])
+        count = -1
+        xmin = 99999.0
+        xmax = -1.0
+        ymin = 99999.0
+        ymax = -1.0
+        for key in toplot:
+            x = []
+            y = []
+            baseline = data[key][-8]
+            count += 1
+            for index,value in enumerate(data[key]):
+                if (value > -1):
+                    newval = exp(value)
+                    x.append(index-len(data[key])+8)
+                    y.append(newval)
+                    if index < xmin:
+                        xmin = index
+                    if index > xmax:
+                        xmax = index
+                    if newval < ymin:
+                        ymin = value
+                    if newval > ymax:
+                        ymax = value
+                axs[int(count/2),count%2].plot(x,y)
+                axs[int(count/2),count%2].set_title(key)
+                today = exp(data[key][-8])/10
+                next  = exp(data[key][-1])
+                axs[int(count/2),count%2].plot([0,0],[today,next])
 
 
-fig.tight_layout(pad=2.0)
-plt.yscale('log')
-fig.savefig('topten.png')
+
+        fig.tight_layout(pad=2.0)
+        plt.yscale('log')
+        fig.savefig('topten.png')
+    return report
+
+fullreport = ''
+for number in range(-backlog,1):
+    fullreport += '=' * 80 + '\n'
+    report = do_analysis(-number)
+    fullreport = report + fullreport
+
+print(fullreport)

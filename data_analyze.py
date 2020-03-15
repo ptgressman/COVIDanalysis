@@ -5,10 +5,10 @@ import re
 CSVlocation = "../COVID-19/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv"
 CSVout = "smoothed.csv"
 
-locations = [['Mainland China'],['Delaware County','PA','US'],['PA','US'],[]]
+#locations = [['Mainland China'],['Delaware County','PA','US'],['PA','US'],[]]
 
 remove = 0
-silent = True
+silent = False
 
 def locator_to_label(locator):
     if len(locator) == 0:
@@ -183,164 +183,171 @@ def smooth_it(datalist,global_margin,change_by,deriv_sign = 0,logarithmic=False)
         newlist.append(datadict[delta_ind])
     return newlist
 
+class DataProcessor(object):
+    def __init__(self,remove):
+        with open(CSVlocation,"r") as file:
+            rawdata = file.read()
+            file.close()
 
-with open(CSVlocation,"r") as file:
-    rawdata = file.read()
-    file.close()
-
-CSV = textmanip.csv_parse(rawdata)
-if not silent:
-    print(len(CSV))
-for index in range(len(CSV)):
-    for clip in range(-remove,0):
-        del CSV[index][clip]
-atrow = 1
-running = True
-while running:
-    nonzero = False
-    for index in range(4,len(CSV[atrow])):
-        if int(CSV[atrow][index]) > 0:
-            nonzero = True
-    if nonzero:
-        atrow += 1
-    else:
-        del CSV[atrow]
-    if atrow == len(CSV):
-        running = False
-if not silent:
-    print(len(CSV))
-my_aggregate_data = {}
-
-# USA
-
-USstateslist = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
-'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas',
-'Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota',
-'Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey',
-'New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon',
-'Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas',
-'Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','District of Columbia','District of Columbia']
-USstatesabbr = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
-'IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH',
-'NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA',
-'WA','WV','WI','WY','DC','D.C.']
-
-found_states = []
-state_indices = {}
-other_indices = []
-parent_index = []
-for_import = []
-for index,item in enumerate(CSV):
-    if item[0] in USstateslist:
-        if item[0] in found_states:
-            if not silent:
-                print('ERROR : Apparent Duplicate',item[0])
-        found_states.append(item[0])
+        CSV = textmanip.csv_parse(rawdata)
         if not silent:
-            print('ADDING: Found record for',item[0])
-        state_indices[item[0]] = index
-for index,item in enumerate(CSV):
-    if item[1] == 'US':
-        if item[0] not in USstateslist:
-            re_abbrev = re.search(r', ([A-Z]\.?[A-Z]\.?)',item[0])
-            if re_abbrev is not None:
-                abbrev = re_abbrev.group(1)
-                if abbrev in USstatesabbr:
-                    statename = USstateslist[USstatesabbr.index(abbrev)]
-                    prefixsearch = re.search(r'([^,]*),',item[0])
-                    if prefixsearch is not None:
-                        prefixname = prefixsearch.group(1)
-                        prefixname = re.sub(' County','',prefixname)
-                        for_import.append([index,statename,prefixname])
-                    if statename not in found_states:
+            print(len(CSV))
+        for index in range(len(CSV)):
+            for clip in range(-remove,0):
+                del CSV[index][clip]
+        atrow = 1
+        running = True
+        while running:
+            nonzero = False
+            for index in range(4,len(CSV[atrow])):
+                if int(CSV[atrow][index]) > 0:
+                    nonzero = True
+            if nonzero:
+                atrow += 1
+            else:
+                del CSV[atrow]
+            if atrow == len(CSV):
+                running = False
+        if not silent:
+            print(len(CSV))
+        my_aggregate_data = {}
+
+        # USA
+
+        USstateslist = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut',
+        'Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas',
+        'Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota',
+        'Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey',
+        'New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon',
+        'Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas',
+        'Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming','District of Columbia','District of Columbia','Other']
+        USstatesabbr = ['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL',
+        'IN','IA','KS','KY','LA','ME','MD','MA','MI','MN','MS','MO','MT','NE','NV','NH',
+        'NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA',
+        'WA','WV','WI','WY','DC','D.C.','U.S.']
+
+        found_states = []
+        state_indices = {}
+        other_indices = []
+        parent_index = []
+        for_import = []
+        for index,item in enumerate(CSV):
+            if item[0] in USstateslist:
+                if item[0] in found_states:
+                    if not silent:
+                        print('ERROR : Apparent Duplicate',item[0])
+                found_states.append(item[0])
+                if not silent:
+                    print('ADDING: Found record for',item[0])
+                state_indices[item[0]] = index
+        for index,item in enumerate(CSV):
+            if item[1] == 'US':
+                if item[0] not in USstateslist:
+                    re_abbrev = re.search(r', ([A-Z]\.?[A-Z]\.?)',item[0])
+                    if re_abbrev is not None:
+                        abbrev = re_abbrev.group(1)
+                        if abbrev in USstatesabbr:
+                            statename = USstateslist[USstatesabbr.index(abbrev)]
+                            prefixsearch = re.search(r'([^,]*),',item[0])
+                            if prefixsearch is not None:
+                                prefixname = prefixsearch.group(1)
+                                prefixname = re.sub(' County','',prefixname)
+                                for_import.append([index,statename,prefixname])
+                            if statename not in found_states:
+                                if not silent:
+                                    print('ADDING: Found record for',item[0])
+                                other_indices.append(index)
+                                parent_index.append(-1)
+                            else:
+                                if not silent:
+                                    print('SUBREC: Record for',item[0])
+                                other_indices.append(index)
+                                parent_index.append(state_indices[statename])
+                        else:
+                            if not silent:
+                                print('ERROR : Not sure about',item[0])
+                            other_indices.append(index)
+                            parent_index.append(-1)
+                    else:
                         if not silent:
                             print('ADDING: Found record for',item[0])
                         other_indices.append(index)
                         parent_index.append(-1)
-                    else:
-                        if not silent:
-                            print('SUBREC: Record for',item[0])
-                        other_indices.append(index)
-                        parent_index.append(state_indices[statename])
-                else:
-                    if not silent:
-                        print('ERROR : Not sure about',item[0])
-                    other_indices.append(index)
-                    parent_index.append(-1)
-            else:
-                if not silent:
-                    print('ADDING: Found record for',item[0])
-                other_indices.append(index)
-                parent_index.append(-1)
 
 
-# export_report = ''
-# for item in for_import:
-#     for index in range(len(CSV[item[0]])):
-#         if index > 3:
-#             cellval = int(CSV[item[0]][index])
-#             if cellval > 0:
-#                 outstr = '{' + str(index-4+22) + ':' + item[1] + ':' + item[2] + ':' + str(cellval) + '}'
-#                 export_report += 'JHU 03-09-20 ' + outstr + '\n'
-# file = open('jhu_export.txt','w')
-# file.write(export_report)
-# file.close()
+        # export_report = ''
+        # for item in for_import:
+        #     for index in range(len(CSV[item[0]])):
+        #         if index > 3:
+        #             cellval = int(CSV[item[0]][index])
+        #             if cellval > 0:
+        #                 outstr = '{' + str(index-4+22) + ':' + item[1] + ':' + item[2] + ':' + str(cellval) + '}'
+        #                 export_report += 'JHU 03-09-20 ' + outstr + '\n'
+        # file = open('jhu_export.txt','w')
+        # file.write(export_report)
+        # file.close()
 
-my_aggregate_data['US'] = []
-my_aggregate_smoothlog = {}
-for index in range(len(CSV[0])):
-    if (index > 3):
-        total = 0
-        for state in state_indices:
-            total += int(CSV[state_indices[state]][index])
-        for whichone,lineno in enumerate(other_indices):
-            if parent_index[whichone] < 0 or int(CSV[parent_index[whichone]][index]) == 0:
-                total += int(CSV[lineno][index])
-        my_aggregate_data['US'].append(total)
+        my_aggregate_data['US'] = []
+        my_aggregate_smoothlog = {}
+        for index in range(len(CSV[0])):
+            if (index > 3):
+                total = 0
+                for state in state_indices:
+                    total += int(CSV[state_indices[state]][index])
+                for whichone,lineno in enumerate(other_indices):
+                    if parent_index[whichone] < 0 or int(CSV[parent_index[whichone]][index]) == 0:
+                        total += int(CSV[lineno][index])
+                my_aggregate_data['US'].append(total)
 
-nation_dict = {}
-for index,item in enumerate(CSV):
-    if item[1] != 'US' and index > 0:
-        if item[1] not in nation_dict:
-            nation_dict[item[1]] = []
-        nation_dict[item[1]].append(index)
+        nation_dict = {}
+        for index,item in enumerate(CSV):
+            if item[1] != 'US' and index > 0:
+                if item[1] not in nation_dict:
+                    nation_dict[item[1]] = []
+                nation_dict[item[1]].append(index)
 
-for name in nation_dict.keys():
-    my_aggregate_data[name] = []
-    for index in range(len(CSV[0])):
-        if (index > 3):
-            total = 0
-            for line in nation_dict[name]:
-                total += int(CSV[line][index])
-            my_aggregate_data[name].append(total)
+        for name in nation_dict.keys():
+            my_aggregate_data[name] = []
+            for index in range(len(CSV[0])):
+                if (index > 3):
+                    total = 0
+                    for line in nation_dict[name]:
+                        total += int(CSV[line][index])
+                    my_aggregate_data[name].append(total)
 
-for name in my_aggregate_data:
-    started = False
-    start_index = 0
-    for index in range(len(my_aggregate_data[name])):
-        if not started and my_aggregate_data[name][index] > 0:
-            start_index = index
-            started = True
-        elif started and my_aggregate_data[name][index] == 0:
+        for name in my_aggregate_data:
             started = False
-    shortlist = []
-    if started:
-        for index in range(start_index,len(my_aggregate_data[name])):
-            shortlist.append(log(my_aggregate_data[name][index]))
-        if len(shortlist) > 3:
-            if not silent:
-                print('Smoothing',name)
-            result = smooth_it(shortlist,0.1,1e-12,1)
-        else:
-            result = shortlist
-        my_aggregate_smoothlog[name] = []
-        for index in range(start_index):
-            my_aggregate_smoothlog[name].append(-999999)
-        for index in range(len(result)):
-            my_aggregate_smoothlog[name].append(result[index])
+            start_index = 0
+            for index in range(len(my_aggregate_data[name])):
+                if not started and my_aggregate_data[name][index] > 0:
+                    start_index = index
+                    started = True
+                elif started and my_aggregate_data[name][index] == 0:
+                    started = False
+            shortlist = []
+            if started:
+                for index in range(start_index,len(my_aggregate_data[name])):
+                    shortlist.append(log(my_aggregate_data[name][index]))
+                if len(shortlist) > 3:
+                    if not silent:
+                        print('Smoothing',name)
+                    result = smooth_it(shortlist,0.1,1e-12,1)
+                else:
+                    result = shortlist
+                my_aggregate_smoothlog[name] = []
+                for index in range(start_index):
+                    my_aggregate_smoothlog[name].append(-999999)
+                for index in range(len(result)):
+                    my_aggregate_smoothlog[name].append(result[index])
 
-my_aggregate_smoothlog['date'] = date_list(CSV)
-my_aggregate_data['date'] = date_list(CSV)
+        my_aggregate_smoothlog['date'] = date_list(CSV)
+        my_aggregate_data['date'] = date_list(CSV)
+        self.my_aggregate_data = my_aggregate_data
+        self.my_aggregate_smoothlog = my_aggregate_smoothlog
+
+#dataobj = DataProcessor(remove)
+#my_aggregate_data = dataobj.my_aggregate_data
+#my_aggregate_smoothlog = dataobj.my_aggregate_smoothlog
 
 #data = all_smoothed(CSV)
 #big_labels = aggregate_labels(CSV)
