@@ -3,7 +3,7 @@ import os
 os.chdir(os.getenv("HOME") + '/Documents/GitHub/COVIDanalysis')
 
 import predict
-import mldistr2
+#import mldistr2
 
 with open('daily_update.txt','r') as file:
   previous = file.read()
@@ -11,8 +11,8 @@ with open('daily_update.txt','r') as file:
 with open('daily_update.txt','w') as file:
   file.write('=' * 80 + '\n')
   file.write(predict.report)
-  file.write('-' * 80 + '\n')
-  file.write(mldistr2.report)
+#  file.write('-' * 80 + '\n')
+#  file.write(mldistr2.report)
   file.write(previous)
   file.close()
 

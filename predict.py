@@ -123,11 +123,11 @@ shorter_dict = {}
 growth = []
 for key in notable_labels:
     shorter_dict[key] = data[key]
-    growth.append([exp(data[key][-1]) - exp(data[key][-8]),key])
+    growth.append([exp(data[key][-5]) - exp(data[key][-8]),key])
 growth.sort(reverse=True)
 
 report = '7-Day COVID-19 Forecast: ' + data['date'][-1] + '\n'
-report += 'Top Ten Largest Anticipated Increases' + '\n'
+report += 'Biggest Anticipated Increases' + '\n'
 
 toplot = []
 for index in range(10):
@@ -143,7 +143,14 @@ for index in range(10):
         lockey += '*'
     lockey = (lockey + ' ' * 17)[:17]
     toplot.append(mykey)
-    report += lockey + ' ' + '%7d' % begin_no + ' +' + '%7d' % (end_no - begin_no) + ' -> ' + '%7d' % end_no + '\n'
+    report += lockey #+ ' ' + '%7d' % begin_no + ' +' + '%7d' % (end_no - begin_no) + ' -> ' + '%7d' % end_no + '\n'
+    #report += ' ' * 18
+    for futureindex in range(-8,0):
+        report += '%7d' % int(exp(shorter_dict[mykey][futureindex]))
+    report += '\n' + ' ' * 17
+    for futureindex in range(-8,0):
+        report += '%+7d' % int(exp(shorter_dict[mykey][futureindex]) - exp(shorter_dict[mykey][futureindex-1]))
+    report += '\n'
 
 print(report)
 

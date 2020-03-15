@@ -7,6 +7,7 @@ CSVout = "smoothed.csv"
 
 locations = [['Mainland China'],['Delaware County','PA','US'],['PA','US'],[]]
 
+remove = 11
 
 def locator_to_label(locator):
     if len(locator) == 0:
@@ -183,7 +184,24 @@ with open(CSVlocation,"r") as file:
     file.close()
 
 CSV = textmanip.csv_parse(rawdata)
-
+print(len(CSV))
+for index in range(len(CSV)):
+    for clip in range(-remove,0):
+        del CSV[index][clip]
+atrow = 1
+running = True
+while running:
+    nonzero = False
+    for index in range(4,len(CSV[atrow])):
+        if int(CSV[atrow][index]) > 0:
+            nonzero = True
+    if nonzero:
+        atrow += 1
+    else:
+        del CSV[atrow]
+    if atrow == len(CSV):
+        running = False
+print(len(CSV))
 my_aggregate_data = {}
 
 # USA
