@@ -7,7 +7,7 @@ CSVout = "smoothed.csv"
 
 locations = [['Mainland China'],['Delaware County','PA','US'],['PA','US'],[]]
 
-remove = 7
+remove = 6
 
 def locator_to_label(locator):
     if len(locator) == 0:
