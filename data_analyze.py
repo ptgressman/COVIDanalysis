@@ -8,6 +8,7 @@ CSVout = "smoothed.csv"
 locations = [['Mainland China'],['Delaware County','PA','US'],['PA','US'],[]]
 
 remove = 0
+silent = True
 
 def locator_to_label(locator):
     if len(locator) == 0:
@@ -75,7 +76,8 @@ def all_smoothed(CSV):
     data['date'] = date_list(CSV)
     for label in labellist:
         locator = label_to_locator(label)
-        print('Computing',label)
+        if not silent:
+            print('Computing',label)
         result = get_smoothed_cumulative(locator,CSV)
         data[label] = result
     return data
@@ -103,9 +105,11 @@ def get_cumulative(locator,CSVdat):
                 if (index >= 4) and (type(data) != str):
                     datalist[index-4] += data
                     if (index == len(line)-1):
-                        print(grab_locator(line),data,datalist[index-4])
+                        if not silent:
+                            print(grab_locator(line),data,datalist[index-4])
     if locator == ['US']:
-        print(datalist)
+        if not silent:
+            print(datalist)
         quit()
     return datalist
 
@@ -179,12 +183,14 @@ def smooth_it(datalist,global_margin,change_by,deriv_sign = 0,logarithmic=False)
         newlist.append(datadict[delta_ind])
     return newlist
 
+
 with open(CSVlocation,"r") as file:
     rawdata = file.read()
     file.close()
 
 CSV = textmanip.csv_parse(rawdata)
-print(len(CSV))
+if not silent:
+    print(len(CSV))
 for index in range(len(CSV)):
     for clip in range(-remove,0):
         del CSV[index][clip]
@@ -201,7 +207,8 @@ while running:
         del CSV[atrow]
     if atrow == len(CSV):
         running = False
-print(len(CSV))
+if not silent:
+    print(len(CSV))
 my_aggregate_data = {}
 
 # USA
@@ -226,9 +233,11 @@ for_import = []
 for index,item in enumerate(CSV):
     if item[0] in USstateslist:
         if item[0] in found_states:
-            print('ERROR : Apparent Duplicate',item[0])
+            if not silent:
+                print('ERROR : Apparent Duplicate',item[0])
         found_states.append(item[0])
-        print('ADDING: Found record for',item[0])
+        if not silent:
+            print('ADDING: Found record for',item[0])
         state_indices[item[0]] = index
 for index,item in enumerate(CSV):
     if item[1] == 'US':
@@ -244,19 +253,23 @@ for index,item in enumerate(CSV):
                         prefixname = re.sub(' County','',prefixname)
                         for_import.append([index,statename,prefixname])
                     if statename not in found_states:
-                        print('ADDING: Found record for',item[0])
+                        if not silent:
+                            print('ADDING: Found record for',item[0])
                         other_indices.append(index)
                         parent_index.append(-1)
                     else:
-                        print('SUBREC: Record for',item[0])
+                        if not silent:
+                            print('SUBREC: Record for',item[0])
                         other_indices.append(index)
                         parent_index.append(state_indices[statename])
                 else:
-                    print('ERROR : Not sure about',item[0])
+                    if not silent:
+                        print('ERROR : Not sure about',item[0])
                     other_indices.append(index)
                     parent_index.append(-1)
             else:
-                print('ADDING: Found record for',item[0])
+                if not silent:
+                    print('ADDING: Found record for',item[0])
                 other_indices.append(index)
                 parent_index.append(-1)
 
@@ -315,7 +328,8 @@ for name in my_aggregate_data:
         for index in range(start_index,len(my_aggregate_data[name])):
             shortlist.append(log(my_aggregate_data[name][index]))
         if len(shortlist) > 3:
-            print('Smoothing',name)
+            if not silent:
+                print('Smoothing',name)
             result = smooth_it(shortlist,0.1,1e-12,1)
         else:
             result = shortlist

@@ -17,7 +17,7 @@ def instate(value):
         comparator *= 2
     return cumlsum
 
-
+silent = True
 
 
 
@@ -71,13 +71,14 @@ def find_analogue(thislist,datadict,neededspace=1):
     if (score > 4.0):
         return None
     if future is not None and linear_future is not None:
-        future = 0.10 * future + 0.90 * linear_future
+        future = 0.50 * future + 0.50 * linear_future
     return future
 
 notable_labels = []
 for place in data_analyze.my_aggregate_data:
     if place != 'date':
-        print(place + ' ',end='',flush=True)
+        if not silent:
+            print(place + ' ',end='',flush=True)
         stopped = False
         reference = data[place][-1]
         if reference < ln(big_outbreaks):
@@ -87,13 +88,15 @@ for place in data_analyze.my_aggregate_data:
             if not stopped:
                 outcome = find_analogue(shortlist,data,3)
                 if outcome != None:
-                    print(exp(outcome),end=', ',flush=True)
+                    if not silent:
+                        print(exp(outcome),end=', ',flush=True)
                     data[place].append(outcome)
                 else:
                     stopped = True
         if not stopped:
             notable_labels.append(place)
-        print('')
+        if not silent:
+            print('')
 
 with open('predict.csv','w') as file:
     file.write('Locale,')
