@@ -200,7 +200,11 @@ class DataProcessor(object):
         while running:
             nonzero = False
             for index in range(4,len(CSV[atrow])):
-                if int(CSV[atrow][index]) > 0:
+                try:
+                    integervalue = int(CSV[atrow][index])
+                except:
+                    integervalue = 0
+                if integervalue > 0:
                     nonzero = True
             if nonzero:
                 atrow += 1
