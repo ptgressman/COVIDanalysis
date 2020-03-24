@@ -195,7 +195,7 @@ class DataProcessor(object):
                 if CSV[index1][index2] == '':
                     CSV[index1][index2] = '0'
         if not silent:
-            print(len(CSV))
+            print('len(CSV)',len(CSV))
         for index in range(len(CSV)):
             for clip in range(-remove,0):
                 del CSV[index][clip]

@@ -58,7 +58,7 @@ def polyfit(snippet,degree):
     return my_sample
 
 import data_analyze
-big_outbreaks = 100
+big_outbreaks = 3000
 
 
 def gen_samples(size):
@@ -163,7 +163,7 @@ def find_analogue(thislist,datadict,samples,neededspace=1):
     return future
 
 def do_analysis(remove):
-    print(remove)
+    print('To remove',remove)
     datapackage = data_analyze.DataProcessor(remove)
     data = datapackage.my_aggregate_smoothlog
     my_aggregate_data = datapackage.my_aggregate_data
@@ -171,7 +171,7 @@ def do_analysis(remove):
 
     notable_labels = []
     for place in my_aggregate_data:
-        if place != 'date':
+        if place != 'date' and place in data:
             if not silent:
                 print(place + ' ',end='',flush=True)
             stopped = False
