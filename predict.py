@@ -58,7 +58,7 @@ def polyfit(snippet,degree):
     return my_sample
 
 import data_analyze
-big_outbreaks = 3000
+big_outbreaks = 2000
 
 
 def gen_samples(size):
