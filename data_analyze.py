@@ -190,6 +190,10 @@ class DataProcessor(object):
             file.close()
 
         CSV = textmanip.csv_parse(rawdata)
+        for index1 in len(CSV):
+            for index2 in len(CSV[index1]):
+                if CSV[index1][index2] == '':
+                    CSV[index1][index2] = '0'
         if not silent:
             print(len(CSV))
         for index in range(len(CSV)):
