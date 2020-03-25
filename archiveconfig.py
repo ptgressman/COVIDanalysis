@@ -25,7 +25,9 @@
 'archive' : 'archiveOTHER/wikiped', 'checktimes' : [0,1,2,3], 'extension' : '.html'},
 
 { 'url' : 'https://coronavirus.1point3acres.com',
-'archive' : 'archiveOTHER/opta', 'checktimes' : [0,1,2,3], 'extension' : '.html'}
+'archive' : 'archiveOTHER/opta', 'checktimes' : [0,1,2,3], 'extension' : '.html'},
 # I get a 403 Forbidden error for some reason
 
+{ 'url' : 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/',
+'archive' : 'archiveWHO/', 'checktimes' : [2], 'extension' : '.html'}
 ]

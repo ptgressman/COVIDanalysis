@@ -31,9 +31,12 @@ def get_asset(paramdict):
         daynumber += currentDay
 
     if os.path.exists(filename):
-        file = open(filename,'r')
-        url_content = file.read()
-        file.close()
+        if 'binary' not in paramdict or paramdict['binary'] == False:
+            file = open(filename,'r')
+            url_content = file.read()
+            file.close()
+        else:
+            url_content = ''
     else:
         print('REQUE',url)
         headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.3'}
@@ -41,9 +44,15 @@ def get_asset(paramdict):
         response = urllib.request.urlopen(myreq)
         print('OPENED',url)
         webbytes = response.read()
-        url_content = webbytes.decode('utf-8')
+        print(len(webbytes))
+        if 'binary' not in paramdict or paramdict['binary'] == False:
+            url_content = webbytes.decode('utf-8')
+            writestr = 'w'
+        else:
+            url_content = webbytes
+            writestr = 'wb'
         print('RETRV',url)
-        file = open(filename,'w')
+        file = open(filename,writestr)
         file.write(url_content)
         file.close()
     return url_content
