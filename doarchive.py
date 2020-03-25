@@ -1,4 +1,4 @@
-archive_todo = ['configCDC.txt','configCDC2.txt','configCDC3.txt','configCDC4.txt','configLiveSci.txt','configNYT.txt']
+archive_todo = 'archiveconfig.py'
 archive_root = '' # Don't put the final slash; I'll do that myself
 
 import ast
@@ -8,22 +8,21 @@ import sys
 if len(sys.argv) > 1:
     archive_root = sys.argv[1]
 
-for item in archive_todo:
+try:
+    filename = archive_todo
+    if archive_root != '':
+        filename = archive_root + '/' + filename
+    filedat = open(filename,'r').read()
+    tasklist = ast.literal_eval(filedat)
+except:
+    tasklist = []
+    print('ERROR: Failed read of ' + filename + '.')
+
+for paramdict in tasklist:
+    if archive_root != '':
+        paramdict['root'] = archive_root
     try:
-        filename = item
-        if archive_root != '':
-            filename = archive_root + '/' + filename
-        filedat = open(filename,'r').read()
-        paramdict = ast.literal_eval(filedat)
-        if paramdict['archive'][-1] != '/':
-            paramdict['archive'] = paramdict['archive'] + '/'
-        if archive_root != '':
-            paramdict['archive'] = archive_root + '/' + paramdict['archive']
+        urldailyarchive.get_asset(paramdict)
+        print('SUCCESS:',paramdict)
     except:
-        paramdict = {'url' : None}
-        print('ERROR: Failed read of ' + item + '.')
-    try:
-        if paramdict['url'] is not None:
-            urldailyarchive.get_html(paramdict['url'],paramdict['archive'])
-    except:
-        print('ERROR: Failed archive of ' + item + ' ' + paramdict['url'])
+        print('ERROR: Failed archive of',paramdict)
