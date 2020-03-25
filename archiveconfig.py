@@ -19,6 +19,13 @@
 'archive' : 'archiveNYT/', 'checktimes' : [0,1,2,3], 'extension' : '.html'},
 
 { 'url' : 'https://www.worldometers.info/coronavirus/',
-'archive' : 'archiveOTHER/worldomet', 'checktimes' : [1,3], 'extension' : '.html'}
+'archive' : 'archiveOTHER/worldomet', 'checktimes' : [1,3], 'extension' : '.html'},
+
+{ 'url' : 'https://en.wikipedia.org/wiki/2019%E2%80%9320_coronavirus_pandemic',
+'archive' : 'archiveOTHER/wikiped', 'checktimes' : [0,1,2,3], 'extension' : '.html'},
+
+{ 'url' : 'https://coronavirus.1point3acres.com',
+'archive' : 'archiveOTHER/opta', 'checktimes' : [0,1,2,3], 'extension' : '.html'}
+# I get a 403 Forbidden error for some reason
 
 ]

@@ -3,7 +3,7 @@ archive_root = '' # Don't put the final slash; I'll do that myself
 
 import ast
 import urldailyarchive
-import sys
+import sys,traceback
 
 if len(sys.argv) > 1:
     archive_root = sys.argv[1]
@@ -23,6 +23,10 @@ for paramdict in tasklist:
         paramdict['root'] = archive_root
     try:
         urldailyarchive.get_asset(paramdict)
+        print('='*80)
         print('SUCCESS:',paramdict)
     except:
+        print('='*80)
         print('ERROR: Failed archive of',paramdict)
+        print('-'*80)
+        traceback.print_exc()
