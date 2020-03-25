@@ -1,0 +1,2 @@
+{ 'url' : 'https://www.livescience.com/coronavirus-updates-united-states.html',
+  'archive' : 'archiveLiveSci'}

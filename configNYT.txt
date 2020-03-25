@@ -1,0 +1,2 @@
+{ 'url' : 'https://www.nytimes.com/interactive/2020/us/coronavirus-us-cases.html',
+  'archive' : 'archiveNYT'}
