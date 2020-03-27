@@ -234,7 +234,8 @@ if __name__ == '__main__':
         print(identifier,' ', end='')
     print()
 
-    monitor = ['US','CN','IT','FR','CA','DE','MX','AU','SA','UK','KR']
+    monitor = ['US','CA','MX','CN','KR','IT','ES','FR','DE','UK','AU','SA']
+    monitor.reverse()
     for country in monitor:
         datapack = get_cases(raw_data,country)
         filename = 'archiveEUCDC/' + datapack['ctc'] + '.png'
