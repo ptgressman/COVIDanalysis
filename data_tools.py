@@ -21,9 +21,6 @@ def best_uniform_line(valuelist):
                 oscillation = osc
     return [slope,itp,oscillation]
 
-print(best_uniform_line([1,2,4,8,16,32,64]))
-quit()
-
 
 def dot_product(list1,list2,dim):
     result = 0.0
