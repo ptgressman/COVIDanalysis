@@ -62,7 +62,7 @@ def extrapolate(list,degree,number,factor):
     return resultvec
 
 def smooth_it(datalist,global_margin,change_by):
-    deriv_sign = 0
+    deriv_sign = 1
     stepfact = 0.04
     count_limit = 5000
     datadict = {}

@@ -51,7 +51,8 @@ def extrapolate(sequence,tolerance):
     frozen = False
     data = None
     predict = 0
-    for length in range(3,len(sequence)):
+    maximum_predict = min(len(sequence),8)
+    for length in range(3,maximum_predict):
         if not frozen:
             mydata = best_uniform_line(log_delta_capture(sequence,length))
             if mydata[-1] <= tolerance:
@@ -91,7 +92,7 @@ def produce(sequence,*,tolerance=0.1,days=0,image_name='default.png',title='Defa
             logseq.append(math.log(oneovere + item - previtem))
             previtem = item # This smooths increments
             previtem = 0 # This smooths cumulative total
-        logseq = data_tools.smooth_it(logseq,tolerance*0.25,1e-12)
+        logseq = data_tools.smooth_it(logseq,tolerance*0.1,1e-12)
         sequence = []
         prevtotal = 0
         for item in logseq:
@@ -107,6 +108,7 @@ def produce(sequence,*,tolerance=0.1,days=0,image_name='default.png',title='Defa
             tolerance += 0.05
             predicted = len(extrapolate(sequence,tolerance)['medium'])
     fig = plt.figure(figsize=(8,8))
+    ax = fig.add_subplot()
     time = []
     magnitude = []
     outstring = ''
@@ -161,8 +163,8 @@ def produce(sequence,*,tolerance=0.1,days=0,image_name='default.png',title='Defa
             for index in range(predict+1):
                 outstring += '% 8i' % int(values[index] + 0.4999) + ' '
             outstring += '\n'
-
-    plt.text(-len(sequence),sequence[-1],outstring+moetext,va='top',fontdict={'family' : 'monospace','size' : 'small'})
+    plt.text(0.01,0.99,outstring+moetext,va='top',fontdict={'family' : 'monospace','size' : 'small'},transform=ax.transAxes)
+#    plt.text(-len(sequence),sequence[-1],outstring+moetext,va='top',fontdict={'family' : 'monospace','size' : 'small'})
     plt.legend(loc='lower right')
     fig.savefig(image_name)
     plt.clf()
@@ -234,7 +236,7 @@ if __name__ == '__main__':
         print(identifier,' ', end='')
     print()
 
-    monitor = ['US','CA','MX','CN','KR','IT','ES','FR','DE','UK','AU','SA']
+    monitor = ['US','CA','MX','CN','KR','IR','IT','ES','FR','DE','UK','AU','SA']
     monitor.reverse()
     for country in monitor:
         datapack = get_cases(raw_data,country)
