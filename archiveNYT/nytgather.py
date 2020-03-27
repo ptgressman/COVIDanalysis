@@ -3,16 +3,21 @@ from datetime import datetime
 
 outfile = 'recent.py'
 
-variable_names = ['countries_raw', 'us_counties', 'ts_raw']
+variable_names = ['countries_raw', 'us_counties', 'ts']
 
 all_objects = os.listdir()
 file = ''
 ctime = 0
+options = []
 for item in all_objects:
     myctime = os.path.getctime(item)
+    if item.startswith('model'):
+        options.append(item)
     if item.startswith('model') and myctime > ctime:
         file = item
         ctime = myctime
+options.sort(reverse=True)
+file = options[0]
 
 text = open(file,'r').read()
 
@@ -44,7 +49,7 @@ locales = []
 for item in data['countries_raw']:
     id_to_name[item['adm0_a3']] = item['nyt_name']
 
-for item in data['ts_raw']:
+for item in data['ts']:
     name = id_to_name[item['adm0_a3']]
     datadict = {}
     for subitem in item['data']:

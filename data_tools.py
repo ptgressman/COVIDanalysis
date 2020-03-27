@@ -1,4 +1,29 @@
-import math,ast
+import math,ast,sys
+
+
+def best_uniform_line(valuelist):
+    oscillation = None
+    for index1 in range(len(valuelist)):
+        for index2 in range(index1+2,len(valuelist)):
+            slope = (valuelist[index2] - valuelist[index1]) / (index2 - index1)
+            minitp = None
+            maxitp = None
+            for index3 in range(len(valuelist)):
+                itp = valuelist[index3] - slope * index3
+                if minitp is None or itp < minitp:
+                    minitp = itp
+                if maxitp is None or itp > maxitp:
+                    maxitp = itp
+            osc = maxitp - minitp
+            if oscillation is None or osc < oscillation:
+                found_slope = slope
+                found_itp   = (maxitp + minitp) * 0.5
+                oscillation = osc
+    return [slope,itp,oscillation]
+
+print(best_uniform_line([1,2,4,8,16,32,64]))
+quit()
+
 
 def dot_product(list1,list2,dim):
     result = 0.0
@@ -177,9 +202,17 @@ def strip(datadict):
     return datadict
 
 if __name__ == '__main__':
+    try:
+        clip = 0
+        if len(sys.argv) > 1:
+            clip = int(sys.argv[1])
+    except:
+        clip = 0
+
     raw_in = ast.literal_eval(open('archiveNYT/recent.py','r').read())
     forward = 7
-    raw_in = strip(raw_in)
+    for index in range(clip):
+        raw_in = strip(raw_in)
     result = smooth_all(raw_in)
     result = extrapolate_all(result,7,forward,0.75)
 

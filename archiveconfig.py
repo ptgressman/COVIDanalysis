@@ -4,13 +4,13 @@
 'archive' : 'archiveCDC/web', 'checktimes' : [3], 'extension' : '.html'},
 
 { 'url' : 'https://www.cdc.gov/coronavirus/2019-ncov/map-cases-us.json',
-'archive' : 'archiveCDC/states', 'checktimes' : [1,3], 'extension' : '.json'},
+'archive' : 'archiveCDC/states', 'checktimes' : [3], 'extension' : '.json'},
 
 { 'url' : 'https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json',
-'archive' : 'archiveCDC/cases', 'checktimes' : [1,3], 'extension' : '.json'},
+'archive' : 'archiveCDC/cases', 'checktimes' : [3], 'extension' : '.json'},
 
 { 'url' : 'https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/us-cases-epi-chart.json',
-'archive' : 'archiveCDC/byons', 'checktimes' : [1,3], 'extension' : '.json'},
+'archive' : 'archiveCDC/byons', 'checktimes' : [3], 'extension' : '.json'},
 
 { 'url' : 'https://www.livescience.com/coronavirus-updates-united-states.html',
 'archive' : 'archiveOTHER/LiveSci', 'checktimes' : [0,2], 'extension' : '.html'},
