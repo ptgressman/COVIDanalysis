@@ -108,7 +108,7 @@ def produce(sequence,*,tolerance=0.1,days=0,image_name='default.png',title='Defa
             tolerance += 0.05
             predicted = len(extrapolate(sequence,tolerance)['medium'])
     fig = plt.figure(figsize=(8,8))
-    ax = fig.add_subplot()
+    ax = fig.add_subplot(111)
     time = []
     magnitude = []
     outstring = ''
