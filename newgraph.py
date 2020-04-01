@@ -261,37 +261,5 @@ if __name__ == '__main__':
         with open('daily_update.txt','w') as file:
             file.write(result + '=' * 80 + '\n' + oldcontents)
             file.close()
-    quit()
 
-
-
-if __name__ == '__main__':
-
-    request = { 'url' : 'https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/total-cases-onset.json',
-    'archive' : 'archiveCDC/cases', 'checktimes' : [0,1,2,3], 'extension' : '.json'}
-    url_content = urldailyarchive.get_asset(request)
-
-    url_content = re.sub('null','None',url_content)
-    url_content = re.sub('false','False',url_content)
-    url_content = re.sub('true','True',url_content)
-
-
-    raw_in = ast.literal_eval(url_content)
-    raw_in = raw_in['data']['columns']
-
-    dates = raw_in[0]
-    del dates[0]
-    timeseries = []
-    for index in range(len(raw_in[1])):
-        if index > 0:
-            timeseries.append(int(raw_in[1][index]))
-
-    result = produce(timeseries,days=5,image_name='USA.png',title='United States',date=dates[-1])
-
-    with open('daily_update.txt','r') as file:
-        oldcontents = file.read()
-        file.close()
-
-    with open('daily_update.txt','w') as file:
-        file.write(result + '=' * 80 + '\n' + oldcontents)
-        file.close()
+    
