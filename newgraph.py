@@ -185,12 +185,23 @@ def produce(sequence,*,tolerance=0.1,days=0,image_name='default.png',title='Defa
 import urllib.request, urllib.error, urllib.parse
 import urldailyarchive
 
+def synthetic_literal_eval(raw):
+    subthings = re.search(r"\[(.|\n)*\]",raw).group(0)
+
+    pattern = re.compile(r'\{(.|\n)*?\}')
+    records = []
+    for item in re.finditer(pattern,subthings):
+        records.append(ast.literal_eval(item.group(0)))
+
+    print('Got',len(records))
+    return {"records" : records}
+
 def get_EUCDC():
     request = { 'url' : 'https://opendata.ecdc.europa.eu/covid19/casedistribution/json/',
     'archive' : 'archiveEUCDC/', 'checktimes' : [0,1,2,3], 'extension' : '.json'}
     url_content = urldailyarchive.get_asset(request)
 
-    object = ast.literal_eval(url_content)
+    object = synthetic_literal_eval(url_content)
     reports = object['records']
     by_geoId = {}
     for record in reports:
@@ -251,6 +262,8 @@ if __name__ == '__main__':
             file.write(result + '=' * 80 + '\n' + oldcontents)
             file.close()
     quit()
+
+
 
 if __name__ == '__main__':
 
