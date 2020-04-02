@@ -247,7 +247,7 @@ if __name__ == '__main__':
         print(identifier,' ', end='')
     print()
 
-    monitor = ['US','CA','MX','CN','KR','IR','IT','ES','FR','DE','UK','AU','SA']
+    monitor = ['US','CA','MX','CN','KR','IR','IT','ES','FR','DE','UK','AU','SA','CZ']
     monitor.reverse()
     for country in monitor:
         datapack = get_cases(raw_data,country)
@@ -261,5 +261,3 @@ if __name__ == '__main__':
         with open('daily_update.txt','w') as file:
             file.write(result + '=' * 80 + '\n' + oldcontents)
             file.close()
-
-    
