@@ -97,8 +97,9 @@ class CustomDistribution(object):
                     if neighbor not in result:
                         result[neighbor] = 0
                     result[neighbor] += subresult[neighbor]
-        self.poisson_size += len(result)
-        self.poisson_calls += 1
+        if modintensity is None:
+            self.poisson_size += len(result)
+            self.poisson_calls += 1
         return result
     def powerlaw(self,size,power,intensity):
         self.probabilities = []
@@ -118,6 +119,12 @@ class CustomDistribution(object):
         self.startup()
         return self
 
+#test = CustomDistribution()
+#test.powerlaw(100,0.195,32.5)
+#for index in range(10):
+#    print(test.poisson(),test.poisson_size,test.poisson_calls)
+#print(test.average(),1.974)
+#quit()
 
 class TorusArray(object):
     def __init__(self,size):
@@ -214,13 +221,16 @@ for parameterno in range(500):
         power = random.random() * 4.0
         intensity = random.random() * 6.0
         distribution.powerlaw(1000,power,intensity)
-    print('Power: %f Intensity %f' % (power,intensity))
-    result = cuba.run()
-    effectiveR0 = distribution.average()
-    outcomes.append({'power' : power, 'intensity' : intensity, 'R0' : effectiveR0, 'result' : result})
-    with open('sampleruns.py','w') as file:
-        file.write(str(outcomes))
-        file.close()
+        for index in range(1000):
+            distribution.poisson()
+    print('INFO : Power %f Intensity %f R0 %f' % (power,intensity,distribution.average()))
+    if distribution.average() > 1.5:
+        result = cuba.run()
+        effectiveR0 = distribution.average()
+        outcomes.append({'power' : power, 'intensity' : intensity, 'R0' : effectiveR0, 'result' : result})
+        with open('sampleruns2.py','w') as file:
+            file.write(str(outcomes))
+            file.close()
 
 
 
