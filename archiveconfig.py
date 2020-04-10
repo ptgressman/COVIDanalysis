@@ -35,6 +35,9 @@
 # I get a 403 Forbidden error for some reason
 
 { 'url' : 'https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/',
-'archive' : 'archiveWHO/', 'checktimes' : [2], 'extension' : '.html'}
+'archive' : 'archiveWHO/', 'checktimes' : [2], 'extension' : '.html'},
+
+{ 'url' : 'https://covidtracking.com/api/v1/states/daily.json',
+'archive' : 'archiveCTR/', 'checktimes' : [2], 'extension' : '.json'}
 
 ]
