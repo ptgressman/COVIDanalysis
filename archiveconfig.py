@@ -38,6 +38,6 @@
 'archive' : 'archiveWHO/', 'checktimes' : [2], 'extension' : '.html'},
 
 { 'url' : 'https://covidtracking.com/api/v1/states/daily.json',
-'archive' : 'archiveCTR/', 'checktimes' : [2], 'extension' : '.json'}
+'archive' : 'archiveCTR/', 'checktimes' : [1], 'extension' : '.json'}
 
 ]
