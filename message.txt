@@ -1,1 +1,2 @@
 REQUE https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
+OPENED https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
