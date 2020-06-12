@@ -65,12 +65,15 @@ def getPADOH():
             if not os.path.exists(localfilename):
                 response = urllib.request.urlopen(foundpdfurl).read()
                 file = open(localfilename,'wb').write(response)
-            scraped_data = extractor(localfilename)
-            scrapedict = {}
-            datestamp[keyword] = get_report_date(localfilename,dfmt)
-            for item in scraped_data:
-                scrapedict[item[0]] = item[1:len(item)]
-            scraped[keyword] = scrapedict
+            try:
+                scraped_data = extractor(localfilename)
+                scrapedict = {}
+                datestamp[keyword] = get_report_date(localfilename,dfmt)
+                for item in scraped_data:
+                    scrapedict[item[0]] = item[1:len(item)]
+                scraped[keyword] = scrapedict
+            except:
+                print('Extraction Failed',localfilename)
     final = {}
     for key in scraped['death']:
         deathresult = scraped['death'][key]
