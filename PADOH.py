@@ -1,4 +1,4 @@
-import subprocess,re,os,ast
+import subprocess,re,os,ast,traceback
 import urllib.request, urllib.error, urllib.parse
 
 pa_health_url = 'https://www.health.pa.gov/topics/disease/coronavirus/Pages/Cases.aspx'
@@ -74,6 +74,7 @@ def getPADOH():
                 scraped[keyword] = scrapedict
             except:
                 print('Extraction Failed',localfilename)
+                traceback.print_exc()
     final = {}
     for key in scraped['death']:
         deathresult = scraped['death'][key]
