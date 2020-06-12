@@ -4,6 +4,7 @@ import ast,re
 
 filedata = open('fipsdata.py','r').read()
 nyt_file = '../../covid-19-data/us-counties.csv'
+nyt_live = '../../covid-19-data/live/us-counties.csv'
 codes = ast.literal_eval(filedata)
 
 county_neighborhoods = {0 : ['42045']}
@@ -70,15 +71,25 @@ def grade(series):
     justifications = []
     # Cases in last week 0.04% to 0.1% of population
     level = (sum(series['cases'][0:7]) - max(series['cases'][0:7])) / series['population'] * 10000
-    justifications.append(int(level*1000)/1000)
-    if level <= 4:
+    if level <= 3:
         grades.append('GREEN')
     elif level <= 7:
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    grades.append(grades[-1])
-    justifications.append(justifications[-1])
+    jtext = 'per capita new cases 7 days, excluding worst day = %6.3f * 10^{-4}' % (level)
+    justifications.append(jtext)
+
+    level = (sum(series['cases'][0:7])) / series['population'] * 10000
+    if level <= 3.5:
+        grades.append('GREEN')
+    elif level <= 7:
+        grades.append('YELLOW')
+    else:
+        grades.append('RED')
+    jtext = 'per capita new cases 7 days = %6.3f * 10^{-4}' % (level)
+    justifications.append(jtext)
+
 
     # [Days increased,Days decreased] It should not be going up very often
     ticks = [0,0]
@@ -95,17 +106,19 @@ def grade(series):
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    justifications.append(ticks)
+    jtext = 'over %i days: %i day-to-day decreases and %i increases' % (len(series['cases']),ticks[1],ticks[0])
+    justifications.append(jtext)
 
     # How much movement to make it decreasing?
     score = mass_motion(series['cases'],series['population'])
-    if score <= 0.05:
+    if score <= 0.1:
         grades.append('GREEN')
-    elif score <= 0.15:
+    elif score <= 0.2:
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    justifications.append(int(score*1000)/1000)
+    jtext = 'Closeness to nondecreasing (0-1) =  %5.3f' % (score)
+    justifications.append(jtext)
 
     # How much change compared to last week?
     vs_lastweek = series['cases'][0] + series['cases'][1] - series['cases'][7] - series['cases'][8]
@@ -116,7 +129,8 @@ def grade(series):
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    justifications.append(int(vs_lastweek*1000)/1000)
+    jtext = 'Last two days per capita change over last week = %6.3f * 10^{-4}' % (vs_lastweek)
+    justifications.append(jtext)
 
     # Should be closer to the minimum in week-over-week data
     upper = series['cases'][0]
@@ -127,14 +141,15 @@ def grade(series):
         lower = min(lower,series['cases'][at_spot])
         at_spot += 7
     upper += 10
-    fraction = (max(series['cases'][0:3])-lower)/(upper-lower)
+    fraction = (series['cases'][0]-lower)/(upper-lower)
     if fraction <= 0.25:
         grades.append('GREEN')
     elif fraction <= 0.45:
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    justifications.append(int(fraction*1000)/1000)
+    jtext = 'Closeness to minimum (week over week) = %5.3f' % (fraction)
+    justifications.append(jtext)
 
     # Should be much closer to the minum over the last few days than the maximum
     upper = max(series['cases']) + 10
@@ -146,7 +161,8 @@ def grade(series):
         grades.append('YELLOW')
     else:
         grades.append('RED')
-    justifications.append(int(fraction*1000)/1000)
+    jtext = 'Max of last 3 days, closeness to minimum = %5.3f' % (fraction)
+    justifications.append(jtext)
 
     series['grades'] = grades
     series['justifications'] = justifications
@@ -199,6 +215,7 @@ for radius in county_neighborhoods:
         population[radius] += codes[county]['pop2019']
 
 mycsv_rows = open(nyt_file,'r').readlines()
+mycsv_rows += open(nyt_live,'r').readlines()
 for row in mycsv_rows:
     cols = re.split(',',row)
     if len(cols) <= 3:
@@ -238,8 +255,9 @@ for key in gathered_data:
     line += '%5i %8i' % (gathered_data[key]['cases'][0],gathered_data[key]['population'])
     message += line + '|\n'
 message += '-' * 25 + '\n'
-message += str(gathered_data[0]['grades']) + '\n'
-message += str(gathered_data[0]['justifications'])
+for index in range(len(gathered_data[0]['grades'])):
+    message += (gathered_data[0]['grades'][index] + ' ' * 4)[0:6] + ' ' + gathered_data[0]['justifications'][index] + '\n'
+
 
 try:
     filestr = open('local_status.txt','r').read()

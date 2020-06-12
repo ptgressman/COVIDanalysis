@@ -1,6 +1,26 @@
 -------------------------
 | COVID-19 Local Status |
-|   As Of: 2020-06-10   |
+|   As Of: 2020-06-12   |
+|0: YELLOW   52   566747|
+|1: YELLOW  324  4357104|
+|2: GREEN   497  8052045|
+|3: GREEN   885 13327166|
+|4: GREEN  1327 21228879|
+|5: GREEN  1828 35577572|
+|6: GREEN  2132 43208157|
+-------------------------
+GREEN  per capita new cases 7 days, excluding worst day =  2.506 * 10^{-4}
+YELLOW per capita new cases 7 days =  3.952 * 10^{-4}
+YELLOW over 27 days: 15 day-to-day decreases and 12 increases
+YELLOW Closeness to nondecreasing (0-1) =  0.110
+GREEN  Last two days per capita change over last week = -0.353 * 10^{-4}
+GREEN  Closeness to minimum (week over week) = 0.135
+YELLOW Max of last 3 days, closeness to minimum = 0.333
+
+========================================
+-------------------------
+| COVID-19 Local Status |
+|   As Of: 2020-06-11   |
 |0: YELLOW   22   566747|
 |1: GREEN   245  4357104|
 |2: GREEN   477  8052045|
@@ -9,20 +29,72 @@
 |5: GREEN  1648 35577572|
 |6: GREEN  1970 43208157|
 -------------------------
-['GREEN', 'GREEN', 'YELLOW', 'YELLOW', 'GREEN', 'YELLOW', 'GREEN']
-[2.276, 2.276, [12, 15], 0.086, -0.247, 0.302, 0.224]
+GREEN  per capita new cases 7 days, excluding worst day =  2.276 * 10^{-4}
+YELLOW per capita new cases 7 days =  3.723 * 10^{-4}
+YELLOW over 27 days: 15 day-to-day decreases and 12 increases
+GREEN  Closeness to nondecreasing (0-1) =  0.086
+GREEN  Last two days per capita change over last week = -0.247 * 10^{-4}
+GREEN  Closeness to minimum (week over week) = 0.000
+GREEN  Max of last 3 days, closeness to minimum = 0.224
+
 ========================================
 -------------------------
 | COVID-19 Local Status |
 |   As Of: 2020-06-10   |
-|0: YELLOW   22   566747|
-|1: GREEN   245  4357104|
-|2: GREEN   477  8052045|
-|3: GREEN   809 13327166|
-|4: GREEN  1122 21228879|
-|5: GREEN  1648 35577572|
-|6: GREEN  1970 43208157|
+|0: YELLOW   35   566747|
+|1: YELLOW  299  4357104|
+|2: GREEN   494  8052045|
+|3: GREEN   716 13327166|
+|4: GREEN  1019 21228879|
+|5: GREEN  1589 35577572|
+|6: GREEN  1856 43208157|
 -------------------------
-['GREEN', 'GREEN', 'YELLOW', 'YELLOW', 'GREEN', 'YELLOW', 'GREEN']
-[2.276, 2.276, [12, 15], 0.086, -0.247, 0.302, 0.224]
+GREEN  per capita new cases 7 days, excluding worst day =  2.858 * 10^{-4}
+YELLOW per capita new cases 7 days =  4.305 * 10^{-4}
+YELLOW over 27 days: 14 day-to-day decreases and 13 increases
+GREEN  Closeness to nondecreasing (0-1) =  0.085
+YELLOW Last two days per capita change over last week =  0.194 * 10^{-4}
+GREEN  Closeness to minimum (week over week) = 0.170
+RED    Max of last 3 days, closeness to minimum = 0.526
+
+========================================
+-------------------------
+| COVID-19 Local Status |
+|   As Of: 2020-06-09   |
+|0: YELLOW   11   566747|
+|1: YELLOW  278  4357104|
+|2: GREEN   451  8052045|
+|3: GREEN   674 13327166|
+|4: GREEN   937 21228879|
+|5: GREEN  1446 35577572|
+|6: GREEN  1814 43208157|
+-------------------------
+GREEN  per capita new cases 7 days, excluding worst day =  2.523 * 10^{-4}
+YELLOW per capita new cases 7 days =  3.970 * 10^{-4}
+YELLOW over 27 days: 14 day-to-day decreases and 13 increases
+GREEN  Closeness to nondecreasing (0-1) =  0.089
+RED    Last two days per capita change over last week =  0.653 * 10^{-4}
+GREEN  Closeness to minimum (week over week) = 0.138
+RED    Max of last 3 days, closeness to minimum = 0.526
+
+========================================
+-------------------------
+| COVID-19 Local Status |
+|   As Of: 2020-06-08   |
+|0: YELLOW   82   566747|
+|1: YELLOW  283  4357104|
+|2: YELLOW  485  8052045|
+|3: GREEN   786 13327166|
+|4: GREEN  1058 21228879|
+|5: GREEN  1877 35577572|
+|6: GREEN  2386 43208157|
+-------------------------
+GREEN  per capita new cases 7 days, excluding worst day =  2.664 * 10^{-4}
+YELLOW per capita new cases 7 days =  4.111 * 10^{-4}
+YELLOW over 27 days: 13 day-to-day decreases and 14 increases
+YELLOW Closeness to nondecreasing (0-1) =  0.131
+YELLOW Last two days per capita change over last week =  0.000 * 10^{-4}
+RED    Closeness to minimum (week over week) = 0.818
+RED    Max of last 3 days, closeness to minimum = 0.526
+
 ========================================
