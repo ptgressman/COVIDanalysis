@@ -1,10 +1,12 @@
 import ast,re
+import matplotlib.pyplot as plt
+import regularize
 
 
-
-filedata = open('fipsdata.py','r').read()
-nyt_file = '../../covid-19-data/us-counties.csv'
-nyt_live = '../../covid-19-data/live/us-counties.csv'
+outtxt = True
+filedata = open('./census/fipsdata.py','r').read()
+nyt_file = '../covid-19-data/us-counties.csv'
+nyt_live = '../covid-19-data/live/us-counties.csv'
 codes = ast.literal_eval(filedata)
 
 county_neighborhoods = {0 : ['42045']}
@@ -73,7 +75,7 @@ def grade(series):
     level = (sum(series['cases'][0:7]) - max(series['cases'][0:7])) / series['population'] * 10000
     if level <= 3:
         grades.append('GREEN')
-    elif level <= 7:
+    elif level <= 5:
         grades.append('YELLOW')
     else:
         grades.append('RED')
@@ -83,7 +85,7 @@ def grade(series):
     level = (sum(series['cases'][0:7])) / series['population'] * 10000
     if level <= 3.5:
         grades.append('GREEN')
-    elif level <= 7:
+    elif level <= 5:
         grades.append('YELLOW')
     else:
         grades.append('RED')
@@ -100,9 +102,9 @@ def grade(series):
         else:
             ticks[0] += 1
         previous = value
-    if ticks[1] >= 1.5*ticks[0]:
+    if ticks[1] >= ticks[0]:
         grades.append('GREEN')
-    elif ticks[1] >= 0.9*ticks[0]:
+    elif ticks[1] >= 0.75*ticks[0]:
         grades.append('YELLOW')
     else:
         grades.append('RED')
@@ -111,9 +113,9 @@ def grade(series):
 
     # How much movement to make it decreasing?
     score = mass_motion(series['cases'],series['population'])
-    if score <= 0.1:
+    if score <= 0.15:
         grades.append('GREEN')
-    elif score <= 0.2:
+    elif score <= 0.3:
         grades.append('YELLOW')
     else:
         grades.append('RED')
@@ -162,6 +164,60 @@ def grade(series):
     else:
         grades.append('RED')
     jtext = 'Max of last 3 days, closeness to minimum = %5.3f' % (fraction)
+    justifications.append(jtext)
+
+    baseline = []
+    for index in range(len(series['cases'])):
+        baseline.insert(0,series['cases'][index])
+    smoothrev = regularize.regularize(regularize.pointwindow(baseline,4,0.05),1e-4 * max(baseline))
+    smooth = []
+    for index in range(len(smoothrev)):
+        smooth.insert(0,smoothrev[index])
+
+    level = sum(smooth[0:7]) / series['population'] * 10000
+    if level <= 3:
+        grades.append('GREEN')
+    elif level <= 5:
+        grades.append('YELLOW')
+    else:
+        grades.append('RED')
+    jtext = 'per capita new cases 7 days (regularized) = %6.3f * 10^{-4}' % (level)
+    justifications.append(jtext)
+
+    level = (14*smooth[0] - sum(smooth[0:7])) / series['population'] * 10000
+    if level <= 3:
+        grades.append('GREEN')
+    elif level <= 5:
+        grades.append('YELLOW')
+    else:
+        grades.append('RED')
+    jtext = 'per capita new cases 7 days (regularized 3.5 day forecast) = %6.3f * 10^{-4}' % (level)
+    justifications.append(jtext)
+
+    fraction = (smooth[0] - min(smooth)) / (max(smooth)-min(smooth))
+    if fraction <= 0.25:
+        grades.append('GREEN')
+    elif fraction <= 0.45:
+        grades.append('YELLOW')
+    else:
+        grades.append('RED')
+    jtext = '(regularized) closeness to minimum = %5.3f' % (fraction)
+    justifications.append(jtext)
+    ticks = [0,0]
+    previous = 0
+    for value in smooth:
+        if value >= previous:
+            ticks[1] += 1
+        else:
+            ticks[0] += 1
+        previous = value
+    if ticks[1] >= 1.5*ticks[0]:
+        grades.append('GREEN')
+    elif ticks[1] >= 0.9*ticks[0]:
+        grades.append('YELLOW')
+    else:
+        grades.append('RED')
+    jtext = '(regularized) over %i days: %i day-to-day decreases and %i increases' % (len(smooth),ticks[1],ticks[0])
     justifications.append(jtext)
 
     series['grades'] = grades
@@ -229,6 +285,7 @@ for row in mycsv_rows:
                 neighborhood_totals[radius][cols[0]][1] += int(cols[5])
 
 gathered_data = {}
+all_data = {}
 for radius in neighborhood_totals:
     cases = []
     deaths = []
@@ -237,6 +294,7 @@ for radius in neighborhood_totals:
         cases.append(neighborhood_totals[radius][date][0])
         deaths.append(neighborhood_totals[radius][date][1])
         last_day = date
+    all_data[radius] = {'cases' : cases, 'deaths' : deaths}
     cases = cases[len(cases)-capture_days-rewind:len(cases)-rewind]
     deaths = deaths[len(deaths)-capture_days-rewind:len(deaths)-rewind]
     cases.reverse()
@@ -258,13 +316,50 @@ message += '-' * 25 + '\n'
 for index in range(len(gathered_data[0]['grades'])):
     message += (gathered_data[0]['grades'][index] + ' ' * 4)[0:6] + ' ' + gathered_data[0]['justifications'][index] + '\n'
 
+if outtxt:
+    try:
+        filestr = open('local_status.txt','r').read()
+        message += '\n'
+        message += '=' * 40 + '\n'
+        message += filestr
+    except:
+        message += '\n'
+        message += '=' * 40
+    open('local_status.txt','w').write(message)
 
-try:
-    filestr = open('local_status.txt','r').read()
-    message += '\n'
-    message += '=' * 40 + '\n'
-    message += filestr
-except:
-    message += '\n'
-    message += '=' * 40
-open('local_status.txt','w').write(message)
+print(message)
+
+
+def convolution(rawcumulative,which):
+    massdistro = {}
+    massdistro[0] = [-1,-2,-1,0,0,0,0,0,0,1,2,1]
+    massdistro[1] = [-1,-1,-1,-1,-1,-1,-1,1,1,1,1,1,1,1]
+    massdistro[2] = [7,-1,-1,-1,-1,-1,-1,-15,1,1,1,1,1,1,8]
+    massdistro[3] = [-1,1]
+    massdistro = massdistro[which]
+    normalization = 0
+    for index in range(len(massdistro)):
+        normalization += index * massdistro[index]
+    width = len(massdistro)
+    result = []
+    for index in range(len(rawcumulative)+1):
+        locsum = 0
+        for subind in range(width):
+            if index-width+subind < 0:
+                value = rawcumulative[0]
+            else:
+                value = rawcumulative[index-width+subind]
+                locsum += massdistro[subind] * value / normalization
+        result.append(locsum)
+    return result
+numplots = 6
+avg = 5
+fig, ax = plt.subplots(numplots,1,figsize=(10,20))
+for index in range(numplots):
+    for choice in [3]:
+        diffs = convolution(all_data[index]['cases'],choice)
+        ax[index].plot(range(len(diffs)),diffs)
+        newguys = regularize.regularize(regularize.pointwindow(diffs,4,0.05),1e-4 * max(diffs))
+        ax[index].plot(range(len(newguys)),newguys)
+#plt.yscale('log')
+fig.savefig('plotnearby.png',bbox_inches='tight')
