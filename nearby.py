@@ -272,18 +272,24 @@ for radius in county_neighborhoods:
 
 mycsv_rows = open(nyt_file,'r').readlines()
 mycsv_rows += open(nyt_live,'r').readlines()
+already_used = {}
+import datetime
+todaydate = datetime.date.today().strftime("%Y-%m-%d")
+print('Ignoring Data for',todaydate)
 for row in mycsv_rows:
     cols = re.split(',',row)
     if len(cols) <= 3:
         raise('I thought it would be longer')
     if cols[3] in county_neighborhoods[max_radius]:
-        for radius in range(max_radius+1):
-            if cols[3] in county_neighborhoods[radius]:
-                if cols[0] not in neighborhood_totals[radius]:
-                    neighborhood_totals[radius][cols[0]] = [0,0]
-                neighborhood_totals[radius][cols[0]][0] += int(cols[4])
-                neighborhood_totals[radius][cols[0]][1] += int(cols[5])
-
+        tag = (cols[0],cols[1],cols[2],cols[3])
+        if tag not in already_used and cols[0] != todaydate:
+            for radius in range(max_radius+1):
+                if cols[3] in county_neighborhoods[radius]:
+                    if cols[0] not in neighborhood_totals[radius]:
+                        neighborhood_totals[radius][cols[0]] = [0,0]
+                    neighborhood_totals[radius][cols[0]][0] += int(cols[4])
+                    neighborhood_totals[radius][cols[0]][1] += int(cols[5])
+        already_used[tag] = True
 gathered_data = {}
 all_data = {}
 for radius in neighborhood_totals:
@@ -306,6 +312,9 @@ for radius in neighborhood_totals:
 
 message = '-' * 25 + '\n'
 message += '| COVID-19 Local Status |\n|   As Of: ' + gathered_data[0]['as_of'] + '   |\n'
+
+print(gathered_data)
+quit()
 
 for key in gathered_data:
     line = '|%1i: ' % (key)
