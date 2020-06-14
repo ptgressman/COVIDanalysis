@@ -313,9 +313,6 @@ for radius in neighborhood_totals:
 message = '-' * 25 + '\n'
 message += '| COVID-19 Local Status |\n|   As Of: ' + gathered_data[0]['as_of'] + '   |\n'
 
-print(gathered_data)
-quit()
-
 for key in gathered_data:
     line = '|%1i: ' % (key)
     line += (multiday_grade(gathered_data[key]) + ' ' * 4)[0:6]
