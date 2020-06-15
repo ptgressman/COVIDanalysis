@@ -300,10 +300,13 @@ for radius in neighborhood_totals:
     cases = []
     deaths = []
     last_day = ''
+    all_dates = []
     for date in sorted(neighborhood_totals[radius]):
         cases.append(neighborhood_totals[radius][date][0])
         deaths.append(neighborhood_totals[radius][date][1])
         last_day = date
+        if date not in all_dates:
+            all_dates.append(date)
     all_data[radius] = {'cases' : cases, 'deaths' : deaths}
     cases = cases[len(cases)-capture_days-rewind:len(cases)-rewind]
     deaths = deaths[len(deaths)-capture_days-rewind:len(deaths)-rewind]
@@ -313,6 +316,7 @@ for radius in neighborhood_totals:
     deaths = list_difference(deaths)
 
     gathered_data[radius] = {'cases' : cases, 'deaths' : deaths, 'as_of' : last_day, 'population' : population[radius]}
+
 
 message = '-' * 25 + '\n'
 message += '| COVID-19 Local Status |\n|   As Of: ' + gathered_data[0]['as_of'] + '   |\n'
@@ -365,7 +369,16 @@ def convolution(rawcumulative,which):
 numplots = 6
 avg = 5
 fig, ax = plt.subplots(numplots,1,figsize=(10,20))
+tickno = []
+tickl = []
+for index in range(len(all_dates)):
+    if (index - len(all_dates)+1) % 14 == 0:
+        tickno.append(index)
+        tickl.append(all_dates[index][5:10])
 for index in range(numplots):
+    plt.subplot(ax[index])
+    plt.xticks(tickno,tickl)
+    ax[index].grid(axis='y',linestyle=':')
     for choice in [3]:
         diffs = convolution(all_data[index]['cases'],choice)
         ax[index].plot(range(len(diffs)),diffs)
