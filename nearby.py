@@ -275,6 +275,8 @@ mycsv_rows += open(nyt_live,'r').readlines()
 already_used = {}
 import datetime
 todaydate = datetime.date.today().strftime("%Y-%m-%d")
+yesterday = datetime.date.today() - datetime.timedelta(days=1)
+yesterdaydate = yesterday.strftime("%Y-%m-%d")
 print('Ignoring Data for',todaydate)
 for row in mycsv_rows:
     cols = re.split(',',row)
@@ -282,7 +284,9 @@ for row in mycsv_rows:
         raise('I thought it would be longer')
     if cols[3] in county_neighborhoods[max_radius]:
         tag = (cols[0],cols[1],cols[2],cols[3])
-        if tag not in already_used and cols[0] != todaydate:
+        if cols[0] == todaydate:
+            cols[0] = yesterdaydate
+        if tag not in already_used:
             for radius in range(max_radius+1):
                 if cols[3] in county_neighborhoods[radius]:
                     if cols[0] not in neighborhood_totals[radius]:
