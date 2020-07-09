@@ -286,6 +286,7 @@ for row in mycsv_rows:
         tag = (cols[0],cols[1],cols[2],cols[3])
         if cols[0] == todaydate:
             cols[0] = yesterdaydate
+            tag = (cols[0],cols[1],cols[2],cols[3])
         if tag not in already_used:
             for radius in range(max_radius+1):
                 if cols[3] in county_neighborhoods[radius]:
@@ -293,7 +294,9 @@ for row in mycsv_rows:
                         neighborhood_totals[radius][cols[0]] = [0,0]
                     neighborhood_totals[radius][cols[0]][0] += int(cols[4])
                     neighborhood_totals[radius][cols[0]][1] += int(cols[5])
+
         already_used[tag] = True
+
 gathered_data = {}
 all_data = {}
 for radius in neighborhood_totals:
@@ -314,6 +317,7 @@ for radius in neighborhood_totals:
     deaths.reverse()
     cases = list_difference(cases)
     deaths = list_difference(deaths)
+
 
     gathered_data[radius] = {'cases' : cases, 'deaths' : deaths, 'as_of' : last_day, 'population' : population[radius]}
 
@@ -373,7 +377,7 @@ tickno = []
 tickl = []
 for index in range(len(all_dates)):
     if (index - len(all_dates)+1) % 14 == 0:
-        tickno.append(index)
+        tickno.append(index-1)
         tickl.append(all_dates[index][5:10])
 for index in range(numplots):
     plt.subplot(ax[index])
