@@ -1,4 +1,4 @@
 REQUE https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
 OPENED https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
-27678976
+27776728
 RETRV https://opendata.ecdc.europa.eu/covid19/casedistribution/json/
