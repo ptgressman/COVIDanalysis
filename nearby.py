@@ -376,7 +376,7 @@ fig, ax = plt.subplots(numplots,1,figsize=(10,20))
 tickno = []
 tickl = []
 for index in range(len(all_dates)):
-    if (index - len(all_dates)+1) % 14 == 0:
+    if (index - len(all_dates)+1) % 28 == 0:
         tickno.append(index-1)
         tickl.append(all_dates[index][5:10])
 for index in range(numplots):
