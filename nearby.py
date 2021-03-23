@@ -372,7 +372,7 @@ def convolution(rawcumulative,which):
     return result
 numplots = 6
 avg = 5
-fig, ax = plt.subplots(numplots,1,figsize=(10,20))
+fig, ax = plt.subplots(numplots,1,figsize=(15,20))
 tickno = []
 tickl = []
 for index in range(len(all_dates)):
