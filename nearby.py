@@ -388,5 +388,6 @@ for index in range(numplots):
         ax[index].plot(range(len(diffs)),diffs)
         newguys = regularize.regularize(regularize.pointwindow(diffs,4,0.05),1e-4 * max(diffs))
         ax[index].plot(range(len(newguys)),newguys)
+        ax[index].set_ylim(bottom=0,top=max(newguys))
 #plt.yscale('log')
 fig.savefig('plotnearby.png',bbox_inches='tight')
