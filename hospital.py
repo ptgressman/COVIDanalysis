@@ -12,7 +12,7 @@ urlretrieve(url, filename)
 adult_covid = 'total_adult_patients_hospitalized_confirmed_and_suspected_covid_7_day_avg'
 child_covid = 'total_pediatric_patients_hospitalized_confirmed_covid_7_day_avg'
 week = 'collection_week'
-
+# Silly comment
 filedata = open('./census/fipsdata.py','r').read()
 codes = ast.literal_eval(filedata)
 county_neighborhoods = {0 : ['42045']}
