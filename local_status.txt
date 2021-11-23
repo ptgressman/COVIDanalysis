@@ -1,5 +1,29 @@
 -------------------------
 | COVID-19 Local Status |
+|   As Of: 2021-11-22   |
+|0: RED     104   566747|
+|1: RED     811  4357104|
+|2: RED    1946  8052045|
+|3: RED    3356 13327166|
+|4: RED    4382 21228879|
+|5: RED    6466 35577572|
+|6: RED    8675 43208157|
+-------------------------
+RED    per capita new cases 7 days, excluding worst day = 12.686 * 10^{-4}
+RED    per capita new cases 7 days = 15.492 * 10^{-4}
+GREEN  over 27 days: 17 day-to-day decreases and 10 increases
+RED    Closeness to nondecreasing (0-1) =  0.351
+RED    Last two days per capita change over last week =  0.723 * 10^{-4}
+RED    Closeness to minimum (week over week) = 0.912
+GREEN  Max of last 3 days, closeness to minimum = 0.197
+RED    per capita new cases 7 days (regularized) = 17.528 * 10^{-4}
+RED    per capita new cases 7 days (regularized 3.5 day forecast) = 18.884 * 10^{-4}
+RED    (regularized) closeness to minimum = 0.976
+RED    (regularized) over 27 days: 8 day-to-day decreases and 19 increases
+
+========================================
+-------------------------
+| COVID-19 Local Status |
 |   As Of: 2021-11-21   |
 |0: RED     122   566747|
 |1: RED    1015  4357104|
