@@ -1,5 +1,29 @@
 -------------------------
 | COVID-19 Local Status |
+|   As Of: 2022-02-10   |
+|0: GREEN   134   566747|
+|1: GREEN  1085  4357104|
+|2: GREEN  2364  8052045|
+|3: GREEN  3835 13327166|
+|4: GREEN  5190 21228879|
+|5: GREEN  8072 35577572|
+|6: GREEN 10501 43208157|
+-------------------------
+RED    per capita new cases 7 days, excluding worst day =  7.958 * 10^{-4}
+RED    per capita new cases 7 days = 15.986 * 10^{-4}
+YELLOW over 27 days: 13 day-to-day decreases and 14 increases
+GREEN  Closeness to nondecreasing (0-1) =  0.032
+GREEN  Last two days per capita change over last week = -3.070 * 10^{-4}
+GREEN  Closeness to minimum (week over week) = 0.000
+GREEN  Max of last 3 days, closeness to minimum = 0.059
+RED    per capita new cases 7 days (regularized) = 12.685 * 10^{-4}
+GREEN  per capita new cases 7 days (regularized 3.5 day forecast) = -13.583 * 10^{-4}
+GREEN  (regularized) closeness to minimum = 0.000
+GREEN  (regularized) over 27 days: 26 day-to-day decreases and 1 increases
+
+========================================
+-------------------------
+| COVID-19 Local Status |
 |   As Of: 2022-02-09   |
 |0: GREEN   134   566747|
 |1: GREEN  1766  4357104|
