@@ -94,7 +94,7 @@ for radius in range(max_radius+1):
 for county in counties:
     if 'data' in counties[county]:
         radius = counties[county]['dist']
-        for cumlrad in range(radius+1):
+        for cumlrad in range(radius,max_radius+1):
             if cumlrad not in population:
                 population[cumlrad] = 0
             population[cumlrad] += counties[county]['pop']
