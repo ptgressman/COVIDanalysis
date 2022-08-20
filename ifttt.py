@@ -4,7 +4,7 @@ private_url = open('../ifttturl.txt','r').read()
 htmlmessage = open('dailymessage.html','r').read()
 
 
-string1 = "Delware County COVID-19 Monitor<br>\n"
+string1 = "Daily Report<br>\n"
 string2 = htmlmessage
 string3 = '<img src="https://github.com/ptgressman/COVIDanalysis/blob/master/plotnearby.png?raw=true">'
 string3 +='<br><img src="https://github.com/ptgressman/COVIDanalysis/blob/master/hospital.png?raw=true">'
