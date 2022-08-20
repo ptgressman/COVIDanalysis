@@ -94,11 +94,12 @@ for radius in range(max_radius+1):
 for county in counties:
     if 'data' in counties[county]:
         radius = counties[county]['dist']
-        if radius not in population:
-            population[radius] = 0
-        population[radius] += counties[county]['pop']
-        for index,value in enumerate(counties[county]['data']):
-            all_data[radius][index] += value
+        for cumlrad in range(radius+1):
+            if cumlrad not in population:
+                population[cumlrad] = 0
+            population[cumlrad] += counties[county]['pop']
+            for index,value in enumerate(counties[county]['data']):
+                all_data[cumlrad][index] += value
 
 numplots = max_radius + 1
 
